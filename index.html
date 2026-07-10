@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya Teja Anupindi | Machine Learning Engineer</title>
+    <meta name="description" content="Portfolio of Surya Teja Anupindi, Machine Learning Engineer specializing in NLP, RAG, Multimodal Fusion, and Computer Vision. MS in Data Science.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas for Neural Network Particles Background -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Custom Mouse Glow Element -->
+    <div id="cursor-glow"></div>
+
+    <!-- Navigation Header -->
+    <header class="hud-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-box">STA</span>
+                <span class="logo-text">SURYA TEJA <span class="accent">// ML</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#hero" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#playgrounds">Playgrounds</a>
+                <a href="#experience">Timeline</a>
+                <a href="#terminal">Terminal</a>
+                <a href="#contact" class="btn-glow">Connect</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="cyber-badge">// ML ENGINEER PIPELINE ACTIVE</div>
+                    <h1 class="hero-title">
+                        Building the Next Gen of <br>
+                        <span class="text-glow">Cognitive Systems</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Specializing in explainable NLP, multimodal fusion, and medical computer vision. Bridging the gap between raw data and clinical/logistics solutions.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#playgrounds" class="btn-primary">Launch Playgrounds</a>
+                        <a href="#terminal" class="btn-secondary">Initialize Terminal</a>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Dashboard Widget -->
+                <div class="hero-dashboard hud-panel glass-card" id="hero-widget">
+                    <div class="panel-header">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                        <span class="panel-title">SYSTEM_MONITOR.sh</span>
+                    </div>
+                    <div class="panel-body font-mono">
+                        <div class="code-line"><span class="c-blue">&gt;</span> python -m model.train --epoch 100</div>
+                        <div class="code-line"><span class="c-gray">[INFO] Initializing PyTorch CUDA Core...</span></div>
+                        <div class="code-line"><span class="c-green">[SUCCESS] GPU Accelerated: RTX 4090 Active</span></div>
+                        <div class="code-line"><span class="c-gray">Training Progress:</span></div>
+                        <div class="progress-container">
+                            <div class="progress-bar-glow" id="hero-progress-bar" style="width: 82%;"></div>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-val text-glow" id="hero-metric-acc">98.4%</div>
+                                <div class="metric-lbl">Accuracy</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-val text-glow-violet" id="hero-metric-loss">0.034</div>
+                                <div class="metric-lbl">Loss</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-val text-glow-emerald">6+</div>
+                                <div class="metric-lbl">Demos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// DATA CONVERGENCE</span>
+                    <h2 class="section-title">The Engineer Behind the Algorithms</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text hud-panel glass-card">
+                        <p>
+                            I hold a <strong>Master of Science in Data Science</strong> from Saint Peter's University and a <strong>Bachelor of Technology in Computer Science & Engineering</strong>. My focus lies in architecting robust, explainable ML models that handle complex multimodal datasets.
+                        </p>
+                        <p>
+                            From enhancing diagnostic pipeline explanations using Grad-CAM to building Reciprocal Rank Fusion engines for retrieval-augmented generation (RAG), I construct systems that emphasize transparency and production scalability.
+                        </p>
+                        <div class="edu-pills">
+                            <div class="edu-pill">
+                                <h3>M.S. Data Science</h3>
+                                <p>Saint Peter's University (2026)</p>
+                            </div>
+                            <div class="edu-pill">
+                                <h3>B.Tech CSE</h3>
+                                <p>GITAM University (2023)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-card hud-panel glass-card">
+                        <h3 class="card-title">Technical Skill Matrix</h3>
+                        <div class="skills-category">
+                            <h4>Languages & Libraries</h4>
+                            <div class="skills-tags">
+                                <span class="tag tag-cyan">Python</span>
+                                <span class="tag tag-cyan">PyTorch</span>
+                                <span class="tag tag-cyan">TensorFlow</span>
+                                <span class="tag tag-cyan">Scikit-learn</span>
+                                <span class="tag tag-cyan">SQL</span>
+                                <span class="tag tag-cyan">NumPy</span>
+                                <span class="tag tag-cyan">Pandas</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Deep Learning & NLP</h4>
+                            <div class="skills-tags">
+                                <span class="tag tag-violet">Transformers</span>
+                                <span class="tag tag-violet">Hugging Face</span>
+                                <span class="tag tag-violet">BERT</span>
+                                <span class="tag tag-violet">DeBERTa</span>
+                                <span class="tag tag-violet">RAG</span>
+                                <span class="tag tag-violet">Explainable AI</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Computer Vision & Graphs</h4>
+                            <div class="skills-tags">
+                                <span class="tag tag-rose">OpenCV</span>
+                                <span class="tag tag-rose">Grad-CAM</span>
+                                <span class="tag tag-rose">NetworkX</span>
+                                <span class="tag tag-rose">CNN</span>
+                                <span class="tag tag-rose">Image Augmentation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playgrounds Section -->
+        <section id="playgrounds" class="playgrounds-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-tag">// INTERACTIVE INFERENCE</span>
+                    <h2 class="section-title">Virtual ML Playgrounds</h2>
+                    <p class="section-desc">Experience my machine learning implementations running live in your browser. Interact with inputs and see real-time predictions.</p>
+                </div>
+
+                <div class="playground-dashboard">
+                    <!-- Sidebar Selector -->
+                    <div class="playground-tabs">
+                        <button class="pg-tab active" data-pg="argrag">
+                            <span class="tab-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </span>
+                            <span class="tab-label">ArgRAG Explorer</span>
+                        </button>
+                        <button class="pg-tab" data-pg="ehr">
+                            <span class="tab-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            </span>
+                            <span class="tab-label">EHR Fusion Risk</span>
+                        </button>
+                        <button class="pg-tab" data-pg="gradcam">
+                            <span class="tab-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </span>
+                            <span class="tab-label">X-Ray Scanner</span>
+                        </button>
+                        <button class="pg-tab" data-pg="route">
+                            <span class="tab-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="18" r="3"></circle><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"></line></svg>
+                            </span>
+                            <span class="tab-label">Route Optimizer</span>
+                        </button>
+                    </div>
+
+                    <!-- Playground Screen Content -->
+                    <div class="playground-display hud-panel">
+                        <!-- Play 1: ArgRAG -->
+                        <div class="playground-content active" id="pg-argrag">
+                            <div class="pg-info">
+                                <h3>ArgRAG: Argument-Aware Retrieval-Augmented Generation</h3>
+                                <p>My research paper project that inserts an argument filtering layer between retrieval and generation, improving factuality by 3.4% and explanation quality by 21%.</p>
+                                <div class="query-selector">
+                                    <label for="rag-query">Select a medical clinical query to run:</label>
+                                    <div class="input-btn-group">
+                                        <select id="rag-query" class="form-input font-mono">
+                                            <option value="q1">Is acetaminophen safe for patients with acute liver injury?</option>
+                                            <option value="q2">Does immunotherapy show progress in metastatic melanoma?</option>
+                                            <option value="q3">What are the warning signs of pediatric diabetic ketoacidosis?</option>
+                                        </select>
+                                        <button id="run-rag-btn" class="btn-primary">Run RAG Pipeline</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pg-visualizer">
+                                <div class="rag-pipeline-map">
+                                    <div class="pipe-step" id="step-retrieve">
+                                        <div class="step-badge">1. Retrieve</div>
+                                        <div class="retrieval-flows">
+                                            <div class="flow-box" id="flow-bm25">BM25 (Sparse)</div>
+                                            <div class="flow-box" id="flow-dpr">DPR (Dense)</div>
+                                        </div>
+                                    </div>
+                                    <div class="pipe-arrow">➔</div>
+                                    <div class="pipe-step" id="step-rrf">
+                                        <div class="step-badge">2. RRF Ensemble</div>
+                                        <div class="flow-box font-mono" id="rrf-box">Reciprocal Rank Fusion</div>
+                                    </div>
+                                    <div class="pipe-arrow">➔</div>
+                                    <div class="pipe-step" id="step-classify">
+                                        <div class="step-badge">3. DeBERTa Classify</div>
+                                        <div class="flow-box font-mono" id="classify-box">SUPPORT / ATTACK</div>
+                                    </div>
+                                    <div class="pipe-arrow">➔</div>
+                                    <div class="pipe-step" id="step-generate">
+                                        <div class="step-badge">4. Generate</div>
+                                        <div class="flow-box" id="generate-box">FLAN-T5 LLM</div>
+                                    </div>
+                                </div>
+                                <div class="output-console font-mono">
+                                    <div class="console-hdr">ArgRAG_OUTPUT_STREAM</div>
+                                    <div class="console-body" id="rag-console-output">
+                                        // Click "Run RAG Pipeline" to execute the pipeline flow...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Play 2: EHR Fusion -->
+                        <div class="playground-content" id="pg-ehr">
+                            <div class="pg-info">
+                                <h3>Multimodal Clinical Outcome Prediction (MIMIC-IV)</h3>
+                                <p>Integrates structured EHR patient statistics and BioClinicalBERT clinical note embeddings. Adjust the sliders and input patient keywords to observe the fusion model risk calculation.</p>
+                            </div>
+                            <div class="pg-columns-grid">
+                                <div class="ehr-inputs glass-card">
+                                    <div class="slider-group">
+                                        <label for="ehr-age">Patient Age: <span id="val-age" class="font-mono text-glow">55</span> yrs</label>
+                                        <input type="range" id="ehr-age" min="18" max="100" value="55" class="custom-slider">
+                                    </div>
+                                    <div class="slider-group">
+                                        <label for="ehr-sbp">Systolic BP: <span id="val-sbp" class="font-mono text-glow">120</span> mmHg</label>
+                                        <input type="range" id="ehr-sbp" min="80" max="220" value="120" class="custom-slider">
+                                    </div>
+                                    <div class="slider-group">
+                                        <label for="ehr-creatinine">Serum Creatinine: <span id="val-creatinine" class="font-mono text-glow">1.0</span> mg/dL</label>
+                                        <input type="range" id="ehr-creatinine" min="0.5" max="6.0" step="0.1" value="1.0" class="custom-slider">
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="ehr-notes">Clinical Admission Notes:</label>
+                                        <textarea id="ehr-notes" rows="3" class="form-input font-mono" placeholder="Type notes here (e.g., patient complains of acute kidney pain, shortness of breath...)"></textarea>
+                                    </div>
+                                </div>
+                                <div class="ehr-prediction glass-card">
+                                    <div class="gauge-wrapper">
+                                        <svg viewBox="0 0 100 100" class="risk-gauge">
+                                            <circle cx="50" cy="50" r="40" class="gauge-bg"></circle>
+                                            <circle cx="50" cy="50" r="40" class="gauge-fill" id="risk-gauge-fill"></circle>
+                                        </svg>
+                                        <div class="gauge-value font-mono">
+                                            <span id="risk-score-text" class="text-glow">15%</span>
+                                            <span class="risk-lbl">Mortality Risk</span>
+                                        </div>
+                                    </div>
+                                    <div class="prediction-alert" id="ehr-risk-alert">
+                                        <span class="alert-indicator bg-green"></span>
+                                        <span class="alert-status font-mono">STATUS: CLINI_STABLE</span>
+                                    </div>
+                                    <div class="model-log font-mono">
+                                        <div class="log-title">// BioClinicalBERT Embedding</div>
+                                        <div id="ehr-text-tokens" class="log-tokens">Embedding: [0.012, -0.452, 0.912, 0.088, ...]</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Play 3: Grad-CAM X-Ray Scanner -->
+                        <div class="playground-content" id="pg-gradcam">
+                            <div class="pg-info">
+                                <h3>Anomaly Detection &amp; Grad-CAM Interpretability</h3>
+                                <p>Visualizing deep neural network decision features. Toggle the conditions and slide the opacity selector to see how Grad-CAM localizes pulmonary pathological features on the radiograph.</p>
+                                <div class="control-row">
+                                    <div class="btn-group-toggle">
+                                        <button class="toggle-btn active" id="btn-pneumonia">Pneumonia Focus</button>
+                                        <button class="toggle-btn" id="btn-tb">Tuberculosis Focus</button>
+                                    </div>
+                                    <div class="slider-group horiz">
+                                        <label for="gradcam-opacity">Grad-CAM Opacity:</label>
+                                        <input type="range" id="gradcam-opacity" min="0" max="100" value="70" class="custom-slider">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pg-columns-grid">
+                                <div class="xray-viewport">
+                                    <div class="scanline"></div>
+                                    <svg viewBox="0 0 200 200" class="xray-base">
+                                        <!-- Stylized vector Ribcage and Lungs -->
+                                        <rect width="200" height="200" fill="#02050e"></rect>
+                                        <!-- Spine -->
+                                        <line x1="100" y1="20" x2="100" y2="180" stroke="#1e293b" stroke-width="12"></line>
+                                        <!-- Lungs Left and Right -->
+                                        <path d="M90,30 C60,25 35,45 35,100 C35,160 65,170 85,170 C90,170 90,160 90,150 Z" fill="#0f172a" stroke="#334155" stroke-width="2"></path>
+                                        <path d="M110,30 C140,25 165,45 165,100 C165,160 135,170 115,170 C110,170 110,160 110,150 Z" fill="#0f172a" stroke="#334155" stroke-width="2"></path>
+                                        <!-- Ribs left -->
+                                        <path d="M40,60 Q70,75 90,65" fill="none" stroke="#1e293b" stroke-width="4"></path>
+                                        <path d="M38,90 Q70,105 90,95" fill="none" stroke="#1e293b" stroke-width="4"></path>
+                                        <path d="M38,120 Q70,135 90,125" fill="none" stroke="#1e293b" stroke-width="4"></path>
+                                        <!-- Ribs right -->
+                                        <path d="M160,60 Q130,75 110,65" fill="none" stroke="#1e293b" stroke-width="4"></path>
+                                        <path d="M162,90 Q130,105 110,95" fill="none" stroke="#1e293b" stroke-width="4"></path>
+                                        <path d="M162,120 Q130,135 110,125" fill="none" stroke="#1e293b" stroke-width="4"></path>
+                                    </svg>
+                                    <div class="gradcam-overlay" id="gradcam-overlay-layer"></div>
+                                </div>
+                                <div class="xray-metrics glass-card font-mono">
+                                    <h4>Neural Activation Map</h4>
+                                    <div class="metric-row">
+                                        <span>Target Class:</span>
+                                        <span id="xray-target-class" class="text-glow">Pneumonia</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Model Confidence:</span>
+                                        <span id="xray-confidence" class="text-glow-rose">94.2%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Grad-CAM Extrapolator:</span>
+                                        <span class="c-green">CONVERGING</span>
+                                    </div>
+                                    <div class="xray-findings">
+                                        <strong>Findings Summary:</strong>
+                                        <p id="xray-findings-desc">Model localizes high activation intensities in the bilateral lower lung zones, consistent with bronchopneumonic infiltrates.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Play 4: Route Optimizer -->
+                        <div class="playground-content" id="pg-route">
+                            <div class="pg-info">
+                                <h3>Graph Route Optimizer with Real-Time Constraints</h3>
+                                <p>Calculates optimal delivery routes using graph search algorithms. Click on the grid map to place custom delivery addresses/nodes, select your solver, and trigger the search path optimization.</p>
+                                <div class="control-row">
+                                    <div class="btn-group-toggle">
+                                        <button class="toggle-btn active" id="btn-dijkstra">Dijkstra</button>
+                                        <button class="toggle-btn" id="btn-astar">A* Algorithm</button>
+                                    </div>
+                                    <div class="btn-group-normal">
+                                        <button id="btn-solve-route" class="btn-primary">Solve Path</button>
+                                        <button id="btn-clear-route" class="btn-secondary">Reset Grid</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pg-columns-grid">
+                                <div class="canvas-container">
+                                    <canvas id="route-canvas"></canvas>
+                                    <div class="canvas-instruction font-mono">Click grid to add path nodes</div>
+                                </div>
+                                <div class="route-metrics glass-card font-mono">
+                                    <h4>Path Metrics</h4>
+                                    <div class="metric-row">
+                                        <span>Nodes Traversed:</span>
+                                        <span id="path-nodes-count" class="text-glow">0</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Total Distance:</span>
+                                        <span id="path-total-distance" class="text-glow-cyan">0 px</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Search Frontier:</span>
+                                        <span id="path-time-elapsed">Idle</span>
+                                    </div>
+                                    <div class="path-logs">
+                                        <strong>Graph Explorer Trace:</strong>
+                                        <ul id="path-logs-list" class="console-logs font-mono">
+                                            <li>Waiting for node placement...</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-tag">// MILESTONES</span>
+                    <h2 class="section-title">Professional Timeline</h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- Event 1 -->
+                    <div class="timeline-item" data-timeline="1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-header font-mono">
+                            <span class="timeline-date">2025 - 2026</span>
+                            <span class="timeline-company">Saint Peter's University</span>
+                        </div>
+                        <div class="timeline-body hud-panel glass-card">
+                            <h3>Graduate Research Project</h3>
+                            <p class="role-desc">Architecting Advanced NLP Retrieval Solutions</p>
+                            <ul class="timeline-bullets">
+                                <li>Designed and deployed <strong>ArgRAG</strong>, a modular RAG pipeline adding argument filters between BM25/DPR ensembled retrievers and generators.</li>
+                                <li>Optimized classification models (RoBERTa, DeBERTa) to filter passages by argument alignment, boosting factual accuracy by 3.4%.</li>
+                            </ul>
+                            <div class="tech-row">
+                                <span class="badge">PyTorch</span>
+                                <span class="badge">Transformers</span>
+                                <span class="badge">HuggingFace</span>
+                                <span class="badge">DeBERTa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="timeline-item" data-timeline="2">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-header font-mono">
+                            <span class="timeline-date">2025</span>
+                            <span class="timeline-company">Clinical EHR Project</span>
+                        </div>
+                        <div class="timeline-body hud-panel glass-card">
+                            <h3>Multimodal Deep Learning Architect</h3>
+                            <p class="role-desc">Deep Fusion for Clinical Predictions</p>
+                            <ul class="timeline-bullets">
+                                <li>Built deep fusion architectures combining structured tabular hospital statistics and BioClinicalBERT clinical note embeddings.</li>
+                                <li>Improved mortality and triage prediction F1 metric by 7% using PyTorch deep neural networks.</li>
+                            </ul>
+                            <div class="tech-row">
+                                <span class="badge">PyTorch</span>
+                                <span class="badge">SQLAlchemy</span>
+                                <span class="badge">MIMIC-IV</span>
+                                <span class="badge">BERT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="timeline-item" data-timeline="3">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-header font-mono">
+                            <span class="timeline-date">2024</span>
+                            <span class="timeline-company">NASA Dataset Research</span>
+                        </div>
+                        <div class="timeline-body hud-panel glass-card">
+                            <h3>MLP Neural Net Architect</h3>
+                            <p class="role-desc">Asteroid Diameter Regression</p>
+                            <ul class="timeline-bullets">
+                                <li>Optimized a multi-layer perceptron neural network using TensorFlow/Keras on NASA's open datasets, estimating asteroid size with high $R^2$ scores.</li>
+                            </ul>
+                            <div class="tech-row">
+                                <span class="badge">TensorFlow</span>
+                                <span class="badge">Keras</span>
+                                <span class="badge">Scikit-learn</span>
+                                <span class="badge">Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Command Console Terminal Section -->
+        <section id="terminal" class="terminal-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-tag">// CYBER SYSTEM SHELL</span>
+                    <h2 class="section-title">ML Terminal Interface</h2>
+                    <p class="section-desc">Run commands directly against my digital twin. Query skills, fetch resume details, or trigger model training simulations.</p>
+                </div>
+
+                <div class="terminal-container hud-panel glass-card">
+                    <div class="terminal-header">
+                        <div class="header-elements">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                            <span class="terminal-title font-mono">sta@neuroshell:~</span>
+                        </div>
+                        <div class="system-status font-mono">
+                            CORE: ACTIVE // LATENCY: 24ms
+                        </div>
+                    </div>
+                    <div class="terminal-body font-mono" id="terminal-screen">
+                        <div class="term-line">SURYA TEJA ANUPINDI - COGNITIVE SHELL v1.0.0</div>
+                        <div class="term-line">Type <span class="c-cyan">help</span> to list active terminal utilities.</div>
+                        <div class="term-line">&nbsp;</div>
+                    </div>
+                    <div class="terminal-input-wrapper font-mono">
+                        <span class="prompt">sta@neuroshell:~$</span>
+                        <input type="text" id="terminal-input" autocomplete="off" placeholder="Type a command...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container small-container">
+                <div class="section-header center">
+                    <span class="section-tag">// COMM-LINK</span>
+                    <h2 class="section-title">Initialize Connection</h2>
+                </div>
+
+                <div class="contact-card hud-panel glass-card">
+                    <form id="contact-form" class="cyber-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" required class="form-input" placeholder="Elon Musk">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email Address</label>
+                                <input type="email" id="form-email" required class="form-input" placeholder="elon@spacex.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">Subject</label>
+                            <input type="text" id="form-subject" required class="form-input" placeholder="Opportunities / Projects">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Transmission Content</label>
+                            <textarea id="form-message" rows="5" required class="form-input" placeholder="Write your message here..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary full-width">Transmit Message</button>
+                        </div>
+                    </form>
+                    <div id="form-response-console" class="font-mono text-glow-emerald hide">
+                        &gt; [SUCCESS] Transmission successfully delivered to Surya's node. Thank you!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hud-footer">
+        <div class="container footer-container font-mono">
+            <p class="copyright">© 2026 SURYA TEJA ANUPINDI. ALL PIPELINES OPERATIONAL.</p>
+            <div class="social-links">
+                <a href="mailto:reach2.anupindi@gmail.com" class="social-link" title="Email">Email</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">LinkedIn</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
