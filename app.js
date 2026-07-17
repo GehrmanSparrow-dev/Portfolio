@@ -740,7 +740,9 @@ function initTerminal() {
         skills: `TECHNICAL SKILL MATRIX\n---------------------\n[Languages]: Python (NumPy, Pandas, Matplotlib), SQL, Java, C, R\n[Frameworks]: PyTorch, TensorFlow, Keras, HuggingFace Ecosystem\n[NLP/IR]: Transformers, DeBERTa, BERT, BM25, DPR, Reciprocal Rank Fusion\n[Vision/Graphs]: OpenCV, CNN Architectures, Grad-CAM, NetworkX`,
         projects: `ACTIVE PIPELINES & PROJECTS\n---------------------------\n1. ArgRAG (Argument-Aware Retrieval-Augmented Generation) - Python, PyTorch, Transformers.\n2. Multimodal Clinical Predictor (MIMIC-IV) - PyTorch, Clinical notes embeddings, SQLAlchemy.\n3. Radiograph Anomaly Detector - TensorFlow, OpenCV, Grad-CAM.\n4. Route Optimizer - Dijkstra & A* Path Planning.\nType 'train --model mlp' to test local model training loop.`,
         contact: `CONTACT PORTAL NODES\n--------------------\nEmail: reach2.anupindi@gmail.com\nLinkedIn: linkedin.com/in/surya-teja-anupindi\nGitHub: github.com/suryateja-anupindi`,
-        help: `AVAILABLE COMMAND UTILITIES:\n  about     - Brief summary profile.\n  skills    - List core programming languages and ML frameworks.\n  projects  - Summarize advanced project pipelines.\n  contact   - Print communication channels.\n  train --model [mlp|cnn] - Simulates neural network model training.\n  clear     - Wipe console screen buffer.`
+        resume: `ATS OPTIMIZED RESUME\n---------------------\nOpening printable ATS-optimized page (resume.html) in a new tab...\n\nSURYA TEJA ANUPINDI\nML Engineer | MS in Data Science\nEmail: reach2.anupindi@gmail.com`,
+        pathway: `PATHWAY OF THE SILICON MIND\n----------------------------\nCurrently ascending from Mortal Coder to Divine Engine.\nSequence 9: The Coder (Completed) - Coded custom Python automation scripts (File organizer, Grades parser, Transaction ledger).\nSequence 8: The Data Sculptor (In Progress) - Focused on vectors, matrices, derivatives, and data transformation (NumPy, Pandas).\nTime spent in Sequence 9: ~22 hours.`,
+        help: `AVAILABLE COMMAND UTILITIES:\n  about     - Brief summary profile.\n  skills    - List core programming languages and ML frameworks.\n  projects  - Summarize advanced project pipelines.\n  contact   - Print communication channels.\n  resume    - View and print ATS-optimized resume.\n  pathway   - View current sequence and projects on the Pathway of the Silicon Mind.\n  train --model [mlp|cnn] - Simulates neural network model training.\n  clear     - Wipe console screen buffer.`
     };
 
     input.addEventListener('keydown', async (e) => {
@@ -768,6 +770,11 @@ function initTerminal() {
                 printLine(details.projects);
             } else if (baseCmd === 'contact') {
                 printLine(details.contact);
+            } else if (baseCmd === 'resume') {
+                printLine(details.resume);
+                window.open('resume.html', '_blank');
+            } else if (baseCmd === 'pathway') {
+                printLine(details.pathway);
             } else if (baseCmd === 'train') {
                 const modelArg = tokens.indexOf('--model');
                 let targetModel = 'mlp';

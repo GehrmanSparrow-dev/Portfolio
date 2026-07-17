@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya Teja Anupindi - Resume</title>
+    <style>
+        /* ==========================================================================
+           Web View Styling (Screen Preview)
+           ========================================================================== */
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.4;
+        }
+
+        /* Top Instruction Banner */
+        .instruction-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #38bdf8;
+            padding: 0.6rem;
+            text-align: center;
+            font-size: 0.85rem;
+            border-bottom: 2px solid #0ea5e9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .instruction-banner strong {
+            color: #ffffff;
+        }
+        .instruction-banner kbd {
+            background-color: #334155;
+            border: 1px solid #475569;
+            border-radius: 4px;
+            color: #ffffff;
+            padding: 0.1rem 0.3rem;
+            font-size: 0.7rem;
+            font-family: monospace;
+        }
+
+        /* Document Paper Setup */
+        .resume-page {
+            background-color: #ffffff;
+            width: 8.5in;
+            min-height: 11in;
+            margin: 1.5rem auto;
+            padding: 0.5in 0.6in;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        /* Typography & Layout */
+        .resume-header {
+            margin-bottom: 0.8rem;
+        }
+        .name {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #2b707d; /* Teal Accent Color */
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+        .title {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #475569;
+            margin: 0.2rem 0 0.3rem 0;
+        }
+        .contact-info {
+            font-size: 8.8pt;
+            color: #64748b;
+            margin: 0;
+        }
+        .contact-info a {
+            color: #64748b;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            color: #2b707d;
+        }
+
+        /* Professional Summary */
+        .summary-text {
+            font-size: 8.8pt;
+            color: #334155;
+            margin-top: 0.8rem;
+            margin-bottom: 0.8rem;
+            text-align: justify;
+            line-height: 1.35;
+        }
+
+        /* Section Headings with Divider Line */
+        .section-header {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #2b707d; /* Teal Accent Color */
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 0.1rem;
+        }
+
+        /* Entry Layout: Company / Location / Dates */
+        .entry-container {
+            margin-bottom: 0.75rem;
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 9.5pt;
+            margin-bottom: 0.05rem;
+        }
+        .company-name {
+            font-weight: bold;
+            color: #1e293b;
+        }
+        .entry-dates {
+            font-weight: bold;
+            color: #1e293b;
+        }
+        .entry-role {
+            font-size: 8.8pt;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.15rem;
+        }
+
+        /* Bullet lists matching Resume Worded style */
+        ul.bullets-list {
+            margin: 0 0 0.4rem 0;
+            padding-left: 1.3rem;
+            font-size: 8.8pt;
+            line-height: 1.35;
+            color: #334155;
+            list-style-type: disc;
+        }
+        ul.bullets-list li {
+            margin-bottom: 0.2rem;
+            text-align: justify;
+        }
+
+        /* Skills block key-value style */
+        .skills-container {
+            font-size: 8.8pt;
+            line-height: 1.4;
+            color: #334155;
+        }
+        .skills-row {
+            margin-bottom: 0.3rem;
+        }
+        .skills-row strong {
+            color: #1e293b;
+        }
+
+        /* ==========================================================================
+           Print & Export Styling (Triggers on print/save to PDF)
+           ========================================================================== */
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+
+            .instruction-banner {
+                display: none !important;
+            }
+
+            .resume-page {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            .resume-page:last-of-type {
+                page-break-after: avoid;
+            }
+
+            .name {
+                color: #2b707d !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .section-header {
+                color: #2b707d !important;
+                border-bottom: 1px solid #cbd5e1;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .company-name, .entry-dates {
+                color: #000000;
+            }
+
+            .entry-role {
+                color: #334155;
+            }
+
+            ul.bullets-list li {
+                color: #000000;
+            }
+
+            .entry-container, .project-item {
+                page-break-inside: avoid;
+            }
+            
+            @page {
+                size: letter;
+                margin: 0.5in 0.5in;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Instruction Banner (Hidden during PDF prints) -->
+    <div class="instruction-banner">
+        🖨️ <strong>ATS Export Mode Active:</strong> Press <kbd>Ctrl</kbd> + <kbd>P</kbd> (or <kbd>Cmd</kbd> + <kbd>P</kbd> on Mac), set destination to <strong>Save as PDF</strong>, disable headers/footers, and export.
+    </div>
+
+    <!-- Paper Body -->
+    <!-- Paper Body -->
+    <div class="resume-page" id="page-1">
+        
+        <!-- Header -->
+        <div class="resume-header">
+            <h1 class="name">Surya Teja Anupindi</h1>
+            <div class="title">Machine Learning Engineer</div>
+            <p class="contact-info">
+                Jersey City, NJ &bull; +1 (551) 263-9722 &bull; <a href="mailto:reach2.anupindi@gmail.com">reach2.anupindi@gmail.com</a> &bull; <a href="https://linkedin.com">linkedin.com/in/surya-teja</a> &bull; <a href="https://gehrmansparrow-dev.github.io/Portfolio/">Portfolio</a>
+            </p>
+        </div>
+
+        <!-- Summary -->
+        <p class="summary-text">
+            Machine Learning Engineer with a Master's in Data Science and hands-on experience building end-to-end ML pipelines across healthcare, environmental science, and logistics domains. Proficient in Python, PyTorch, TensorFlow, and Scikit-learn with expertise in NLP, Computer Vision, and multimodal deep learning.
+        </p>
+
+        <!-- Section: Experience -->
+        <div class="section-header">Relevant Work Experience</div>
+        
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Quantela, Hyderabad, TG</span>
+                <span class="entry-dates">Apr 2022 &ndash; May 2024</span>
+            </div>
+            <div class="entry-role">Machine Learning Engineer</div>
+            <ul class="bullets-list">
+                <li>Architected end-to-end MLOps pipelines (ingestion &rarr; training &rarr; deployment &rarr; monitoring) on AWS/GCP, reducing model deployment time from 6 weeks to under 48 hours and cutting batch training cost by ~45%.</li>
+                <li>Pioneered an LLM-powered citizen-service automation workflow integrated into the eGovernance stack, resolving 89% of 40K+ monthly queries without human intervention and reducing response time from 14 min to under 30 sec.</li>
+                <li>Established model governance (drift detection, SHAP-based explainability, A/B testing) aligned to CMMI Level 5, passing external AI audits with zero critical findings.</li>
+            </ul>
+        </div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Quantela, Hyderabad, TG</span>
+                <span class="entry-dates">2021 &ndash; Apr 2022</span>
+            </div>
+            <div class="entry-role">Machine Learning Intern</div>
+            <ul class="bullets-list">
+                <li>Productionized computer vision and anomaly-detection models for video monitoring, crowd management, and IoT telemetry across 35,000+ smart-streetlight and parking assets, achieving 94% mAP and a 62% drop in false-positive alerts.</li>
+                <li>Built a reusable AI model store and feature-engineering framework that eliminated ~70% of duplicate modeling effort across Asset Management, Location Insights, and Citizen App product lines.</li>
+            </ul>
+        </div>
+
+        <!-- Section: Projects -->
+        <div class="section-header">Projects</div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">ArgRAG: Argument-Aware Retrieval-Augmented Generation</span>
+                <span class="entry-dates">Research Paper, 2025</span>
+            </div>
+            <div class="entry-role">Python, PyTorch, Transformers</div>
+            <ul class="bullets-list">
+                <li>Improved factual accuracy by 3.4% and explanation quality by 21% (human-rated) by designing ArgRAG, a modular RAG pipeline that inserts an explicit argumentation layer between retrieval and generation for explainable NLP.</li>
+                <li>Reduced retrieval variance by ensembling BM25, DPR, ColBERT, and SPLADE retrievers via Reciprocal Rank Fusion, achieving +4.4% Verdict EM over the best single retriever on the BEIR-FEVER benchmark.</li>
+                <li>Fine-tuned a DeBERTa-v3 stance classifier to categorize retrieved passages, grounding LLM reasoning templates and reducing expected calibration error (ECE) to 0.043.</li>
+            </ul>
+        </div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Multimodal Clinical Outcome Prediction &ndash; MIMIC-IV</span>
+                <span class="entry-dates">2025</span>
+            </div>
+            <div class="entry-role">Python, PyTorch, SQLAlchemy</div>
+            <ul class="bullets-list">
+                <li>Built deep fusion architectures combining structured tabular EHR data (demographics, vital signs, lab statistics) with unstructured clinician admit notes.</li>
+                <li>Encoded clinical notes using BioClinicalBERT embeddings and optimized patient mortality prediction, achieving a +7% F1-score improvement over baseline models.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="resume-page" id="page-2">
+        
+        <!-- Section: Projects (Continued) -->
+        <div class="section-header" style="margin-top: 0;">Projects (Continued)</div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Pathway of the Silicon Mind: Agentic Ascension</span>
+                <span class="entry-dates">July 2026 &ndash; Present</span>
+            </div>
+            <div class="entry-role">Python, NumPy, Pandas, Automation</div>
+            <ul class="bullets-list">
+                <li>Ascending through a 10-sequence structured roadmap from Python foundations to self-evolving agentic codebases.</li>
+                <li><strong>Sequence 9 (The Coder - Completed)</strong>: Built custom automation pipelines including file category organizers, CSV-to-JSON grade processors, and interactive ledger consoles.</li>
+                <li><strong>Sequence 8 (The Data Sculptor - In Progress)</strong>: Implementing high-dimensional matrix transformations and exploratory data analysis (EDA) using NumPy, Pandas, and Matplotlib.</li>
+            </ul>
+        </div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Anomaly Detection in Chest Radiographs</span>
+                <span class="entry-dates">2024</span>
+            </div>
+            <div class="entry-role">Python, TensorFlow, Keras, OpenCV, Scikit-learn</div>
+            <ul class="bullets-list">
+                <li>Productionized chest X-ray abnormality detection (pneumonia and tuberculosis) using transfer-learned ResNet50 and DenseNet121 architectures.</li>
+                <li>Integrated Grad-CAM visualization heatmaps to provide clinical interpretability by highlighting localized pathological features for radiologists.</li>
+            </ul>
+        </div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Species Distribution &amp; Environmental Factor Analysis</span>
+                <span class="entry-dates">2024</span>
+            </div>
+            <div class="entry-role">Python, Pandas, Scikit-learn, Matplotlib</div>
+            <ul class="bullets-list">
+                <li>Modeled complex relationships between species distribution counts and geographic/meteorological variables using Scikit-learn regressors.</li>
+                <li>Engineered features for spatial density correlation and cleaned dataset noise using IQR-based outlier filters, improving R-squared by 12%.</li>
+            </ul>
+        </div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Asteroid Diameter Prediction via MLP Neural Network</span>
+                <span class="entry-dates">2024</span>
+            </div>
+            <div class="entry-role">Python, TensorFlow, Scikit-learn, Pandas</div>
+            <ul class="bullets-list">
+                <li>Built and optimized a Multi-Layer Perceptron (MLP) regressor on NASA's physical and orbital asteroid databases to estimate asteroid diameter.</li>
+                <li>Handled multi-collinearity using feature selection and implemented dropout layers for regularization, achieving low MAE/MSE and high R-squared metrics.</li>
+            </ul>
+        </div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Delivery Route Optimizer with Real-Time Constraints</span>
+                <span class="entry-dates">2024</span>
+            </div>
+            <div class="entry-role">Python, NetworkX, NumPy, Pandas</div>
+            <ul class="bullets-list">
+                <li>Developed a real-time shipping route simulator utilizing NetworkX graph objects, integrating dynamic edge weights representing traffic and time windows.</li>
+                <li>Benchmarked Dijkstra, A*, and Christofides TSP heuristic algorithms to deliver optimal sub-second query latency and reduce fuel routing costs by 15%.</li>
+            </ul>
+        </div>
+
+        <!-- Section: Education -->
+        <div class="section-header">Education</div>
+        
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Saint Peter's University, Jersey City, NJ</span>
+                <span class="entry-dates">Feb 2026</span>
+            </div>
+            <div class="entry-role" style="font-weight: normal;">Master of Science in Data Science</div>
+        </div>
+
+        <div class="entry-container">
+            <div class="entry-header">
+                <span class="company-name">Gandhi Institute of Technology and Management, India</span>
+                <span class="entry-dates">Aug 2023</span>
+            </div>
+            <div class="entry-role" style="font-weight: normal;">Bachelor of Technology in Computer Science & Engineering</div>
+        </div>
+
+        <!-- Section: Skills -->
+        <div class="section-header">Skills</div>
+        <div class="skills-container">
+            <div class="skills-row">
+                <strong>Technical Skills:</strong> Deep Learning (PyTorch, TensorFlow, Keras), NLP, Transformers (Hugging Face, BERT, RoBERTa, DeBERTa, BioClinicalBERT, FLAN-T5), RAG &amp; IR (BM25, DPR, ColBERT, SPLADE, FAISS, RRF), Computer Vision (OpenCV, CNNs, Grad-CAM), MLOps, Feature Engineering
+            </div>
+            <div class="skills-row">
+                <strong>Languages &amp; Tools:</strong> Python, SQL, R, Java, C, SQLAlchemy, Git, Anaconda, NLTK, SacreBLEU
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
