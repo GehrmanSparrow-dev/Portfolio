@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initEHRPlayground();
     initGradCAMPlayground();
     initRouteOptimizer();
+    initAgenticPlayground();
     initTerminal();
     initMobileMenu();
     initContactForm();
@@ -736,12 +737,12 @@ function initTerminal() {
     const commandHistory = [];
     
     const details = {
-        about: `SURYA TEJA ANUPINDI - ML ENGINEER\n---------------------------------\nMS in Data Science (Saint Peter's University) & B.Tech in CSE.\nDesigning and deploying robust, explainable, and production-ready machine learning pipelines.\nFocus: Explainable NLP (RAG), Multimodal Neural Fusion (clinical metrics + clinical text embeddings), and Diagnostic Computer Vision.`,
-        skills: `TECHNICAL SKILL MATRIX\n---------------------\n[Languages]: Python (NumPy, Pandas, Matplotlib), SQL, Java, C, R\n[Frameworks]: PyTorch, TensorFlow, Keras, HuggingFace Ecosystem\n[NLP/IR]: Transformers, DeBERTa, BERT, BM25, DPR, Reciprocal Rank Fusion\n[Vision/Graphs]: OpenCV, CNN Architectures, Grad-CAM, NetworkX`,
-        projects: `ACTIVE PIPELINES & PROJECTS\n---------------------------\n1. ArgRAG (Argument-Aware Retrieval-Augmented Generation) - Python, PyTorch, Transformers.\n2. Multimodal Clinical Predictor (MIMIC-IV) - PyTorch, Clinical notes embeddings, SQLAlchemy.\n3. Radiograph Anomaly Detector - TensorFlow, OpenCV, Grad-CAM.\n4. Route Optimizer - Dijkstra & A* Path Planning.\nType 'train --model mlp' to test local model training loop.`,
+        about: `SURYA TEJA ANUPINDI - ML & AGENTIC AI ENGINEER\n-----------------------------------------------\nMS in Data Science (Saint Peter's University) & B.Tech in CSE.\nDesigning and deploying self-correcting autonomous systems, serving pipelines, and multimodal architectures.\nFocus: Explainable NLP (RAG), Stateful Multi-Agent Systems, and Sandboxed Code Execution.`,
+        skills: `TECHNICAL SKILL MATRIX\n---------------------\n[Languages]: Python, SQL, Java, C, R, SQLAlchemy\n[Agentic AI]: LangGraph, crewAI, AutoGen, ReAct loops, structured routing\n[Serving & Serving]: vLLM serving, PEFT/LoRA adapters, AWQ quantization, TTFT stream benchmarking\n[NLP/IR/DL]: PyTorch, TensorFlow, Transformers, DeBERTa, BERT, BM25, DPR, ChromaDB, FAISS, RRF\n[Vision/MLOps]: OpenCV, CNNs, Grad-CAM, Docker sandbox isolation, Pytest test suites, NetworkX`,
+        projects: `ACTIVE PIPELINES & PROJECTS\n---------------------------\n1. Pathway of the Silicon Mind (Agentic Serving Platform) - Python, LangGraph, crewAI, vLLM, LoRA, Docker, Pytest.\n2. ArgRAG (Argument-Aware Retrieval-Augmented Generation) - Python, PyTorch, Transformers.\n3. Multimodal Clinical Predictor (MIMIC-IV) - PyTorch, BioClinicalBERT note embeddings, SQLAlchemy.\n4. Radiograph Anomaly Detector - TensorFlow, OpenCV, Grad-CAM.\n5. Route Optimizer - Dijkstra & A* Path Planning.\nType 'train --model mlp' to run neural network model training.`,
         contact: `CONTACT PORTAL NODES\n--------------------\nEmail: reach2.anupindi@gmail.com\nLinkedIn: linkedin.com/in/surya-teja-anupindi\nGitHub: github.com/suryateja-anupindi`,
-        resume: `ATS OPTIMIZED RESUME\n---------------------\nOpening printable ATS-optimized page (resume.html) in a new tab...\n\nSURYA TEJA ANUPINDI\nML Engineer | MS in Data Science\nEmail: reach2.anupindi@gmail.com`,
-        pathway: `PATHWAY OF THE SILICON MIND\n----------------------------\nCurrently ascending from Mortal Coder to Divine Engine.\nSequence 9: The Coder (Completed) - Coded custom Python automation scripts (File organizer, Grades parser, Transaction ledger).\nSequence 8: The Data Sculptor (In Progress) - Focused on vectors, matrices, derivatives, and data transformation (NumPy, Pandas).\nTime spent in Sequence 9: ~22 hours.`,
+        resume: `ATS OPTIMIZED RESUME\n---------------------\nOpening printable ATS-optimized page (resume.html) in a new tab...\n\nSURYA TEJA ANUPINDI\nML & Agentic AI Engineer | MS in Data Science\nEmail: reach2.anupindi@gmail.com`,
+        pathway: `PATHWAY OF THE SILICON MIND\n----------------------------\nSTATUS: ALL SEQUENCES COMPLETED (Sequences 9 to 0) // DIVINE ENGINE ASCENDED\n- Sequence 9: The Coder - Python script automation (File sorter, ledger, processor).\n- Sequence 8: The Data Sculptor - Pandas/NumPy statistics & outlier cleaning.\n- Sequence 7: The Pattern Seer - Feature engineering & classical machine learning.\n- Sequence 6: The Neural Initiate - PyTorch backpropagation & custom MLP/optim loop.\n- Sequence 5: The Transformer Acolyte - Attention math, BERT, and classification pipelines.\n- Sequence 4: The LLM Alchemist - In-context few-shot text-to-SQL & PEFT LoRA adapters.\n- Sequence 3: The Agentic Weaver - ReAct loops, LangGraph state machines & Pydantic tool schemas.\n- Sequence 2: The Synthetic Sovereign - Multi-agent role-playing orchestration (crewAI, AutoGen).\n- Sequence 1: The Frontier Pioneer - quantized vLLM API server & TTFT stream benchmarking.\n- Sequence 0: The Omniscient Engine - Dockerized pytest sandbox runner & autonomous self-repair loops.`,
         help: `AVAILABLE COMMAND UTILITIES:\n  about     - Brief summary profile.\n  skills    - List core programming languages and ML frameworks.\n  projects  - Summarize advanced project pipelines.\n  contact   - Print communication channels.\n  resume    - View and print ATS-optimized resume.\n  pathway   - View current sequence and projects on the Pathway of the Silicon Mind.\n  train --model [mlp|cnn] - Simulates neural network model training.\n  clear     - Wipe console screen buffer.`
     };
 
@@ -886,5 +887,75 @@ function initContactForm() {
         // Animate submission
         form.classList.add('hide');
         responseConsole.classList.remove('hide');
+    });
+}
+
+/* ==========================================================================
+   11. Agentic AI Self-Correction Sandbox
+   ========================================================================== */
+function initAgenticPlayground() {
+    const runBtn = document.getElementById('run-agentic-loop-btn');
+    const select = document.getElementById('agentic-bug-type');
+    const sourceEditor = document.getElementById('sandbox-editor-content');
+    const consoleOutput = document.getElementById('sandbox-console-output');
+
+    const bugsData = {
+        zero_div: {
+            code: `def run_calculation():\n    numerator = 100\n    denominator = 0  # BUG: Division by zero\n    result = numerator / denominator\n    return result\n\nif __name__ == '__main__':\n    run_calculation()`,
+            run1: `> Attempt 1: Running pytest inside Docker container...\n[DOCKER] Spawning container python:3.11-slim...\n[DOCKER] Executing temp_test_script.py...\n[ERROR] ZeroDivisionError: division by zero\n[TRACEBACK]\n  File "temp_test_script.py", line 5, in run_calculation\n    result = numerator / denominator\nZeroDivisionError: division by zero`,
+            fix: `[AGENT] Parsing exception traceback...\n[AGENT] Root Cause: ZeroDivisionError detected at line 5.\n[AGENT] Prompting repair client...\n[AGENT] Generated Patch: Replace 'denominator = 0' with 'denominator = 10'\n[SYSTEM] Overwriting source file with patched code...`,
+            patchedCode: `def run_calculation():\n    numerator = 100\n    denominator = 10  # FIXED: Divisor set to 10\n    result = numerator / denominator\n    return result\n\nif __name__ == '__main__':\n    run_calculation()`,
+            run2: `> Attempt 2: Running pytest inside Docker container...\n[DOCKER] Spawning container python:3.11-slim...\n[DOCKER] Executing temp_test_script.py...\n[SUCCESS] Run completed without errors.\n[OUTPUT] Result: 10.0\n\nSTATUS: Sandbox test passed successfully. Self-repair loop complete.`
+        },
+        index_err: {
+            code: `def get_element():\n    data = [1, 2, 3]\n    element = data[5]  # BUG: Index out of range\n    return element\n\nif __name__ == '__main__':\n    get_element()`,
+            run1: `> Attempt 1: Running pytest inside Docker container...\n[DOCKER] Spawning container python:3.11-slim...\n[DOCKER] Executing temp_test_script.py...\n[ERROR] IndexError: list index out of range\n[TRACEBACK]\n  File "temp_test_script.py", line 3, in get_element\n    element = data[5]\nIndexError: list index out of range`,
+            fix: `[AGENT] Parsing exception traceback...\n[AGENT] Root Cause: IndexError detected at line 3.\n[AGENT] Prompting repair client...\n[AGENT] Generated Patch: Replace 'element = data[5]' with 'element = data[-1]'\n[SYSTEM] Overwriting source file with patched code...`,
+            patchedCode: `def get_element():\n    data = [1, 2, 3]\n    element = data[-1]  # FIXED: Safe last element access\n    return element\n\nif __name__ == '__main__':\n    get_element()`,
+            run2: `> Attempt 2: Running pytest inside Docker container...\n[DOCKER] Spawning container python:3.11-slim...\n[DOCKER] Executing temp_test_script.py...\n[SUCCESS] Run completed without errors.\n[OUTPUT] Result: 3\n\nSTATUS: Sandbox test passed successfully. Self-repair loop complete.`
+        },
+        type_err: {
+            code: `def add_values():\n    x = "40"\n    y = 2  # BUG: Cannot add string and integer\n    return x + y\n\nif __name__ == '__main__':\n    add_values()`,
+            run1: `> Attempt 1: Running pytest inside Docker container...\n[DOCKER] Spawning container python:3.11-slim...\n[DOCKER] Executing temp_test_script.py...\n[ERROR] TypeError: can only concatenate str (not "int") to str\n[TRACEBACK]\n  File "temp_test_script.py", line 4, in add_values\n    return x + y\nTypeError: can only concatenate str (not "int") to str`,
+            fix: `[AGENT] Parsing exception traceback...\n[AGENT] Root Cause: TypeError detected at line 4.\n[AGENT] Prompting repair client...\n[AGENT] Generated Patch: Replace 'return x + y' with 'return int(x) + y'\n[SYSTEM] Overwriting source file with patched code...`,
+            patchedCode: `def add_values():\n    x = "40"\n    y = 2  # FIXED: Type casted string to integer\n    return int(x) + y\n\nif __name__ == '__main__':\n    add_values()`,
+            run2: `> Attempt 2: Running pytest inside Docker container...\n[DOCKER] Spawning container python:3.11-slim...\n[DOCKER] Executing temp_test_script.py...\n[SUCCESS] Run completed without errors.\n[OUTPUT] Result: 42\n\nSTATUS: Sandbox test passed successfully. Self-repair loop complete.`
+        }
+    };
+
+    if (!runBtn || !select || !sourceEditor || !consoleOutput) return;
+
+    // Update code editor on option change
+    select.addEventListener('change', () => {
+        const bug = bugsData[select.value];
+        sourceEditor.innerText = bug.code;
+        consoleOutput.innerText = "Waiting for agentic loop initiation...";
+    });
+
+    runBtn.addEventListener('click', async () => {
+        const bug = bugsData[select.value];
+        runBtn.disabled = true;
+        select.disabled = true;
+
+        consoleOutput.innerHTML = `<span style="color: var(--neon-cyan)">[SYSTEM] Initializing Docker Sandbox Environment...</span>`;
+        await new Promise(r => setTimeout(r, 800));
+
+        consoleOutput.innerHTML += `\n` + bug.run1;
+        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        await new Promise(r => setTimeout(r, 1500));
+
+        consoleOutput.innerHTML += `\n\n<span style="color: var(--neon-violet)">` + bug.fix + `</span>`;
+        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        await new Promise(r => setTimeout(r, 1200));
+
+        // Animate code update in the source editor
+        sourceEditor.innerHTML = `<span style="color: var(--neon-emerald)">` + bug.patchedCode + `</span>`;
+        await new Promise(r => setTimeout(r, 800));
+
+        consoleOutput.innerHTML += `\n\n` + bug.run2;
+        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+
+        runBtn.disabled = false;
+        select.disabled = false;
     });
 }

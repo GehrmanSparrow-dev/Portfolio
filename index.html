@@ -54,7 +54,7 @@
                         <span class="text-glow">Cognitive Systems</span>
                     </h1>
                     <p class="hero-subtitle">
-                        Specializing in explainable NLP, multimodal fusion, and medical computer vision. Bridging the gap between raw data and clinical/logistics solutions.
+                        Specializing in stateful agentic workflows, high-performance model serving, multimodal deep learning, and verify-and-repair cognitive loops.
                     </p>
                     <div class="hero-cta-group">
                         <a href="#playgrounds" class="btn-primary">Launch Playgrounds</a>
@@ -127,36 +127,37 @@
                     <div class="skills-card hud-panel glass-card">
                         <h3 class="card-title">Technical Skill Matrix</h3>
                         <div class="skills-category">
-                            <h4>Languages & Libraries</h4>
+                            <h4>Agentic AI & MLOps</h4>
                             <div class="skills-tags">
-                                <span class="tag tag-cyan">Python</span>
-                                <span class="tag tag-cyan">PyTorch</span>
-                                <span class="tag tag-cyan">TensorFlow</span>
-                                <span class="tag tag-cyan">Scikit-learn</span>
-                                <span class="tag tag-cyan">SQL</span>
-                                <span class="tag tag-cyan">NumPy</span>
-                                <span class="tag tag-cyan">Pandas</span>
+                                <span class="tag tag-cyan">LangGraph</span>
+                                <span class="tag tag-cyan">crewAI</span>
+                                <span class="tag tag-cyan">AutoGen</span>
+                                <span class="tag tag-cyan">vLLM serving</span>
+                                <span class="tag tag-cyan">PEFT / LoRA</span>
+                                <span class="tag tag-cyan">Docker sandbox</span>
+                                <span class="tag tag-cyan">Pytest parser</span>
                             </div>
                         </div>
                         <div class="skills-category">
                             <h4>Deep Learning & NLP</h4>
                             <div class="skills-tags">
+                                <span class="tag tag-violet">PyTorch</span>
+                                <span class="tag tag-violet">TensorFlow</span>
                                 <span class="tag tag-violet">Transformers</span>
-                                <span class="tag tag-violet">Hugging Face</span>
-                                <span class="tag tag-violet">BERT</span>
                                 <span class="tag tag-violet">DeBERTa</span>
-                                <span class="tag tag-violet">RAG</span>
-                                <span class="tag tag-violet">Explainable AI</span>
+                                <span class="tag tag-violet">RAG & IR</span>
+                                <span class="tag tag-violet">ChromaDB</span>
                             </div>
                         </div>
                         <div class="skills-category">
-                            <h4>Computer Vision & Graphs</h4>
+                            <h4>Languages & Foundations</h4>
                             <div class="skills-tags">
+                                <span class="tag tag-rose">Python</span>
+                                <span class="tag tag-rose">SQL</span>
+                                <span class="tag tag-rose">R</span>
                                 <span class="tag tag-rose">OpenCV</span>
                                 <span class="tag tag-rose">Grad-CAM</span>
                                 <span class="tag tag-rose">NetworkX</span>
-                                <span class="tag tag-rose">CNN</span>
-                                <span class="tag tag-rose">Image Augmentation</span>
                             </div>
                         </div>
                     </div>
@@ -199,6 +200,12 @@
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="18" r="3"></circle><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"></line></svg>
                             </span>
                             <span class="tab-label">Route Optimizer</span>
+                        </button>
+                        <button class="pg-tab" data-pg="agentic">
+                            <span class="tab-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                            </span>
+                            <span class="tab-label">Agentic Sandbox</span>
                         </button>
                     </div>
 
@@ -404,6 +411,40 @@
                                             <li>Waiting for node placement...</li>
                                         </ul>
                                     </div>
+                            </div>
+                        </div>
+                        <!-- Play 5: Agentic Code Sandbox -->
+                        <div class="playground-content" id="pg-agentic">
+                            <div class="pg-info">
+                                <h3>Pathway of the Silicon Mind: Self-Correcting Agent Sandbox</h3>
+                                <p>Simulates an autonomous SWE agent loop executing inside a Docker container. Select a bug type, trigger the execution, and watch the agent capture the exception, prompt a repair model, patch the code, and verify it successfully.</p>
+                                <div class="query-selector">
+                                    <label for="agentic-bug-type">Select a deliberate bug injection:</label>
+                                    <div class="input-btn-group">
+                                        <select id="agentic-bug-type" class="form-input font-mono">
+                                            <option value="zero_div">ZeroDivisionError (denominator = 0)</option>
+                                            <option value="index_err">IndexError (list index out of range)</option>
+                                            <option value="type_err">TypeError (unsupported operand types)</option>
+                                        </select>
+                                        <button id="run-agentic-loop-btn" class="btn-primary">Trigger Agentic Loop</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pg-columns-grid">
+                                <div class="xray-metrics glass-card font-mono" style="padding: 1.5rem; display: flex; flex-direction: column; min-height: 250px;">
+                                    <h4 style="margin-top: 0; border-bottom: 1px solid rgba(241, 245, 249, 0.08); padding-bottom: 0.5rem; color: var(--text-color);">// SOURCE_CODE_EDITOR</h4>
+                                    <pre id="sandbox-editor-content" style="flex-grow: 1; font-family: monospace; font-size: 11px; line-height: 1.5; color: var(--text-color); overflow-y: auto; white-space: pre-wrap; margin: 0; background: rgba(3, 7, 18, 0.5); padding: 1rem; border-radius: 4px; border: 1px solid rgba(241, 245, 249, 0.05); text-align: left;">def run_calculation():
+    numerator = 100
+    denominator = 0  # BUG: Division by zero
+    result = numerator / denominator
+    return result
+
+if __name__ == '__main__':
+    run_calculation()</pre>
+                                </div>
+                                <div class="xray-metrics glass-card font-mono" style="padding: 1.5rem; display: flex; flex-direction: column; min-height: 250px;">
+                                    <h4 style="margin-top: 0; border-bottom: 1px solid rgba(241, 245, 249, 0.08); padding-bottom: 0.5rem; color: var(--text-color);">// DOCKER_SANDBOX_OUTPUT</h4>
+                                    <pre id="sandbox-console-output" style="flex-grow: 1; font-family: monospace; font-size: 11px; line-height: 1.5; color: var(--neon-cyan); overflow-y: auto; white-space: pre-wrap; margin: 0; background: #030712; padding: 1rem; border-radius: 4px; border: 1px solid rgba(241, 245, 249, 0.05); min-height: 180px; text-align: left;">Waiting for agentic loop initiation...</pre>
                                 </div>
                             </div>
                         </div>
@@ -425,21 +466,24 @@
                     <div class="timeline-item" data-timeline="0">
                         <div class="timeline-dot"></div>
                         <div class="timeline-header font-mono">
-                            <span class="timeline-date">2026 - Present</span>
+                            <span class="timeline-date">2026</span>
                             <span class="timeline-company">Pathway of the Silicon Mind</span>
                         </div>
                         <div class="timeline-body hud-panel glass-card">
-                            <h3>Agentic Ascension Journey</h3>
-                            <p class="role-desc">Continuous Specialized AI Development (Sequence 8)</p>
+                            <h3>Agentic AI & Serving Ascension</h3>
+                            <p class="role-desc">Completed Sequences 9 ➔ 0 (Divine Engine Ascended)</p>
                             <ul class="timeline-bullets">
-                                <li><strong>Sequence 9: The Coder (Completed)</strong>: Mastered foundational Python automation, building directory organizers, grades processors, and transactional ledger apps.</li>
-                                <li><strong>Sequence 8: The Data Sculptor (In Progress)</strong>: Focussing on high-dimensional vectors, matrices, partial derivatives, and data exploratory pipelines (Pandas, NumPy, Seaborn).</li>
+                                <li><strong>Sequences 9–6 (Mortal & Awakening)</strong>: Built custom deep learning training loops, backprop from scratch, optimizer step updates, and causal transformer attention calculators.</li>
+                                <li><strong>Sequences 5–3 (Demi-God)</strong>: Implemented few-shot text-to-SQL generation, local vector indexing search (ChromaDB), parameter-efficient fine-tuning (PEFT/LoRA) configurations, and stateful LangGraph agent loops.</li>
+                                <li><strong>Sequences 2–0 (Divine)</strong>: Developed multi-agent role-playing crews (crewAI/AutoGen), quantized serving servers (vLLM AWQ) with TTFT latency streams, Docker sandbox isolation runners, and autonomous self-repair SWE loops.</li>
                             </ul>
                             <div class="tech-row">
-                                <span class="badge">Python</span>
-                                <span class="badge">NumPy</span>
-                                <span class="badge">Pandas</span>
-                                <span class="badge">Automation</span>
+                                <span class="badge">LangGraph</span>
+                                <span class="badge">crewAI</span>
+                                <span class="badge">vLLM</span>
+                                <span class="badge">LoRA</span>
+                                <span class="badge">Docker</span>
+                                <span class="badge">PyTorch</span>
                             </div>
                         </div>
                     </div>
