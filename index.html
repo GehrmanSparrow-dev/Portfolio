@@ -4,694 +4,735 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surya Teja Anupindi | Machine Learning Engineer</title>
-    <meta name="description" content="Portfolio of Surya Teja Anupindi, Machine Learning Engineer specializing in NLP, RAG, Multimodal Fusion, and Computer Vision. MS in Data Science.">
+    <meta name="description" content="Portfolio of Surya Teja Anupindi, Machine Learning Engineer specializing in MLOps, Agentic AI, RAG, Multimodal Fusion, and High-Performance LLM Serving.">
+    <link rel="icon" type="image/png" href="https://github.com/GehrmanSparrow-dev.png">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Canvas for Neural Network Particles Background -->
-    <canvas id="neural-canvas"></canvas>
 
-    <!-- Custom Mouse Glow Element -->
-    <div id="cursor-glow"></div>
+    <div class="portfolio-container">
+        
+        <!-- ==================== STICKY HEADER ==================== -->
+        <header class="site-header">
+            <!-- Left: Social Media Icons -->
+            <div class="header-socials">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/surya-teja" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/>
+                    </svg>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/GehrmanSparrow-dev" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
+                    </svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:reach2.anupindi@gmail.com" class="social-icon-btn" aria-label="Email">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                <!-- Phone -->
+                <a href="tel:+15512639722" class="social-icon-btn" aria-label="Phone">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                </a>
+            </div>
 
-    <!-- Navigation Header -->
-    <header class="hud-header">
-        <div class="header-container">
-            <a href="#" class="logo">
-                <span class="logo-box">STA</span>
-                <span class="logo-text">SURYA TEJA <span class="accent">// ML</span></span>
+            <!-- Right: Get In Touch -->
+            <a href="#contact" class="header-contact-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <span>Get in touch</span>
             </a>
-            <nav class="nav-links">
-                <a href="#hero" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#playgrounds">Playgrounds</a>
-                <a href="#experience">Timeline</a>
-                <a href="resume.html" target="_blank">Resume</a>
-                <a href="#terminal">Terminal</a>
-                <a href="#contact" class="btn-glow">Connect</a>
-            </nav>
-            <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+        </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="cyber-badge">// ML ENGINEER PIPELINE ACTIVE</div>
-                    <h1 class="hero-title">
-                        Building the Next Gen of <br>
-                        <span class="text-glow">Cognitive Systems</span>
+        <!-- ==================== 1. HERO SECTION ==================== -->
+        <section id="hero" class="snap-section">
+            <div class="hero-content">
+                <!-- Concentric animated radar circles -->
+                <div class="radar-circles-wrapper">
+                    <div class="radar-circle radar-circle-200"></div>
+                    <div class="radar-circle radar-circle-300"></div>
+                    <div class="radar-circle radar-circle-500"></div>
+                    <div class="radar-circle radar-circle-650"></div>
+                    <div class="radar-circle radar-circle-800"></div>
+                </div>
+
+                <!-- Avatar Profile Photo -->
+                <div class="hero-avatar-wrapper">
+                    <img src="https://github.com/GehrmanSparrow-dev.png" alt="Surya Teja Anupindi" class="hero-avatar">
+                </div>
+
+                <!-- Role Subtitle -->
+                <h2 class="hero-role-title">Machine Learning Engineer</h2>
+
+                <!-- Dynamic Typewriter Headline -->
+                <div class="hero-typewriter-wrapper">
+                    <h1 class="hero-headline">
+                        <span id="typewriter-text" class="typewriter-text"></span><span class="blinkingCursor">|</span>
                     </h1>
-                    <p class="hero-subtitle">
-                        Specializing in stateful agentic workflows, high-performance model serving, multimodal deep learning, and verify-and-repair cognitive loops.
+                </div>
+
+                <!-- Hero Navigation Buttons -->
+                <div class="hero-buttons-group">
+                    <a href="#about"><button class="heroButton">About</button></a>
+                    <a href="#experience"><button class="heroButton">Experience</button></a>
+                    <a href="#skills"><button class="heroButton">Skills</button></a>
+                    <a href="#projects"><button class="heroButton">Projects</button></a>
+                    <a href="resume.html" target="_blank"><button class="heroButton">Resume</button></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2. ABOUT SECTION ==================== -->
+        <section id="about" class="snap-section center-align">
+            <h3 class="section-title-top">About</h3>
+            
+            <div class="about-container">
+                <div class="about-image-wrapper">
+                    <img src="https://github.com/GehrmanSparrow-dev.png" alt="Surya Teja Anupindi" class="about-photo">
+                </div>
+
+                <div class="about-text-wrapper">
+                    <h4 class="about-heading">Here is a <span class="underline-accent">little</span> background</h4>
+                    
+                    <p class="about-description">
+                        Hey 👋🏼 I am a Machine Learning Engineer based in the United States. I hold a <strong>Master of Science in Data Science</strong> from Saint Peter's University (Jersey City, NJ) and a <strong>Bachelor of Technology in Computer Science & Engineering</strong> from GITAM University.
                     </p>
-                    <div class="hero-cta-group">
-                        <a href="#playgrounds" class="btn-primary">Launch Playgrounds</a>
-                        <a href="#terminal" class="btn-secondary">Initialize Terminal</a>
-                    </div>
-                </div>
+                    
+                    <p class="about-description">
+                        I specialize in architecting end-to-end MLOps pipelines, stateful agentic AI orchestration (LangGraph, crewAI, AutoGen), high-performance model serving (vLLM AWQ), and multimodal deep learning. Recently, I joined <strong>Winaxis LLC</strong> as a Machine Learning Engineer Intern, implementing testing protocols and validation benchmarks for enterprise ML workflows.
+                    </p>
 
-                <!-- Interactive Hero Dashboard Widget -->
-                <div class="hero-dashboard hud-panel glass-card" id="hero-widget">
-                    <div class="panel-header">
-                        <span class="dot-red"></span>
-                        <span class="dot-yellow"></span>
-                        <span class="dot-green"></span>
-                        <span class="panel-title">SYSTEM_MONITOR.sh</span>
+                    <div class="about-badges-row">
+                        <span class="about-pill">🎓 M.S. Data Science (2026)</span>
+                        <span class="about-pill">💼 Winaxis ML Intern (2026)</span>
+                        <span class="about-pill">🤖 Agentic AI & vLLM</span>
+                        <span class="about-pill">📊 CMMI Level 5 MLOps</span>
                     </div>
-                    <div class="panel-body font-mono">
-                        <div class="code-line"><span class="c-blue">&gt;</span> python -m model.train --epoch 100</div>
-                        <div class="code-line"><span class="c-gray">[INFO] Initializing PyTorch CUDA Core...</span></div>
-                        <div class="code-line"><span class="c-green">[SUCCESS] GPU Accelerated: RTX 4090 Active</span></div>
-                        <div class="code-line"><span class="c-gray">Training Progress:</span></div>
-                        <div class="progress-container">
-                            <div class="progress-bar-glow" id="hero-progress-bar" style="width: 82%;"></div>
-                        </div>
-                        <div class="metrics-grid">
-                            <div class="metric-card">
-                                <div class="metric-val text-glow" id="hero-metric-acc">98.4%</div>
-                                <div class="metric-lbl">Accuracy</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-val text-glow-violet" id="hero-metric-loss">0.034</div>
-                                <div class="metric-lbl">Loss</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-val text-glow-emerald">6+</div>
-                                <div class="metric-lbl">Demos</div>
-                            </div>
-                        </div>
+
+                    <div style="margin-top: 0.5rem;">
+                        <a href="MLE_SURYA_RESUME.pdf" target="_blank" download="Surya_Teja_Anupindi_Resume.pdf" class="heroButton" style="border-color: var(--dark-green); color: var(--dark-green); display: inline-block;">
+                            📄 Download Full Resume (PDF)
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">// DATA CONVERGENCE</span>
-                    <h2 class="section-title">The Engineer Behind the Algorithms</h2>
-                </div>
-                <div class="about-grid">
-                    <div class="about-text hud-panel glass-card">
-                        <p>
-                            I hold a <strong>Master of Science in Data Science</strong> from Saint Peter's University and a <strong>Bachelor of Technology in Computer Science & Engineering</strong>. My focus lies in architecting robust, explainable ML models that handle complex multimodal datasets.
-                        </p>
-                        <p>
-                            From enhancing diagnostic pipeline explanations using Grad-CAM to building Reciprocal Rank Fusion engines for retrieval-augmented generation (RAG), I construct systems that emphasize transparency and production scalability.
-                        </p>
-                        <div class="edu-pills">
-                            <div class="edu-pill">
-                                <h3>M.S. Data Science</h3>
-                                <p>Saint Peter's University (2026)</p>
-                            </div>
-                            <div class="edu-pill">
-                                <h3>B.Tech CSE</h3>
-                                <p>GITAM University (2023)</p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- ==================== 3. EXPERIENCE SECTION ==================== -->
+        <section id="experience" class="snap-section center-align">
+            <h3 class="section-title-top">Experience</h3>
 
-                    <div class="skills-card hud-panel glass-card">
-                        <h3 class="card-title">Technical Skill Matrix</h3>
-                        <div class="skills-category">
-                            <h4>Agentic AI & MLOps</h4>
-                            <div class="skills-tags">
-                                <span class="tag tag-cyan">LangGraph</span>
-                                <span class="tag tag-cyan">crewAI</span>
-                                <span class="tag tag-cyan">AutoGen</span>
-                                <span class="tag tag-cyan">vLLM serving</span>
-                                <span class="tag tag-cyan">PEFT / LoRA</span>
-                                <span class="tag tag-cyan">Docker sandbox</span>
-                                <span class="tag tag-cyan">Pytest parser</span>
+            <div class="experience-container">
+                <div class="experience-carousel custom-scrollbar">
+                    
+                    <!-- Card 1: Winaxis LLC (New Experience) -->
+                    <article class="experience-card">
+                        <div class="exp-card-header">
+                            <div>
+                                <h4 class="exp-role-title">Machine Learning Engineer Intern</h4>
+                                <p class="exp-company-name">Winaxis LLC</p>
                             </div>
-                        </div>
-                        <div class="skills-category">
-                            <h4>Deep Learning & NLP</h4>
-                            <div class="skills-tags">
-                                <span class="tag tag-violet">PyTorch</span>
-                                <span class="tag tag-violet">TensorFlow</span>
-                                <span class="tag tag-violet">Transformers</span>
-                                <span class="tag tag-violet">DeBERTa</span>
-                                <span class="tag tag-violet">RAG & IR</span>
-                                <span class="tag tag-violet">ChromaDB</span>
-                            </div>
-                        </div>
-                        <div class="skills-category">
-                            <h4>Languages & Foundations</h4>
-                            <div class="skills-tags">
-                                <span class="tag tag-rose">Python</span>
-                                <span class="tag tag-rose">SQL</span>
-                                <span class="tag tag-rose">R</span>
-                                <span class="tag tag-rose">OpenCV</span>
-                                <span class="tag tag-rose">Grad-CAM</span>
-                                <span class="tag tag-rose">NetworkX</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Playgrounds Section -->
-        <section id="playgrounds" class="playgrounds-section">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-tag">// INTERACTIVE INFERENCE</span>
-                    <h2 class="section-title">Virtual ML Playgrounds</h2>
-                    <p class="section-desc">Experience my machine learning implementations running live in your browser. Interact with inputs and see real-time predictions.</p>
-                </div>
-
-                <div class="playground-dashboard">
-                    <!-- Sidebar Selector -->
-                    <div class="playground-tabs">
-                        <button class="pg-tab active" data-pg="argrag">
-                            <span class="tab-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                            </span>
-                            <span class="tab-label">ArgRAG Explorer</span>
-                        </button>
-                        <button class="pg-tab" data-pg="ehr">
-                            <span class="tab-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                            </span>
-                            <span class="tab-label">EHR Fusion Risk</span>
-                        </button>
-                        <button class="pg-tab" data-pg="gradcam">
-                            <span class="tab-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                            </span>
-                            <span class="tab-label">X-Ray Scanner</span>
-                        </button>
-                        <button class="pg-tab" data-pg="route">
-                            <span class="tab-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="18" r="3"></circle><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"></line></svg>
-                            </span>
-                            <span class="tab-label">Route Optimizer</span>
-                        </button>
-                        <button class="pg-tab" data-pg="agentic">
-                            <span class="tab-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-                            </span>
-                            <span class="tab-label">Agentic Sandbox</span>
-                        </button>
-                    </div>
-
-                    <!-- Playground Screen Content -->
-                    <div class="playground-display hud-panel">
-                        <!-- Play 1: ArgRAG -->
-                        <div class="playground-content active" id="pg-argrag">
-                            <div class="pg-info">
-                                <h3>ArgRAG: Argument-Aware Retrieval-Augmented Generation</h3>
-                                <p>My research paper project that inserts an argument filtering layer between retrieval and generation, improving factuality by 3.4% and explanation quality by 21%.</p>
-                                <div class="query-selector">
-                                    <label for="rag-query">Select a medical clinical query to run:</label>
-                                    <div class="input-btn-group">
-                                        <select id="rag-query" class="form-input font-mono">
-                                            <option value="q1">Is acetaminophen safe for patients with acute liver injury?</option>
-                                            <option value="q2">Does immunotherapy show progress in metastatic melanoma?</option>
-                                            <option value="q3">What are the warning signs of pediatric diabetic ketoacidosis?</option>
-                                        </select>
-                                        <button id="run-rag-btn" class="btn-primary">Run RAG Pipeline</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pg-visualizer">
-                                <div class="rag-pipeline-map">
-                                    <div class="pipe-step" id="step-retrieve">
-                                        <div class="step-badge">1. Retrieve</div>
-                                        <div class="retrieval-flows">
-                                            <div class="flow-box" id="flow-bm25">BM25 (Sparse)</div>
-                                            <div class="flow-box" id="flow-dpr">DPR (Dense)</div>
-                                        </div>
-                                    </div>
-                                    <div class="pipe-arrow">➔</div>
-                                    <div class="pipe-step" id="step-rrf">
-                                        <div class="step-badge">2. RRF Ensemble</div>
-                                        <div class="flow-box font-mono" id="rrf-box">Reciprocal Rank Fusion</div>
-                                    </div>
-                                    <div class="pipe-arrow">➔</div>
-                                    <div class="pipe-step" id="step-classify">
-                                        <div class="step-badge">3. DeBERTa Classify</div>
-                                        <div class="flow-box font-mono" id="classify-box">SUPPORT / ATTACK</div>
-                                    </div>
-                                    <div class="pipe-arrow">➔</div>
-                                    <div class="pipe-step" id="step-generate">
-                                        <div class="step-badge">4. Generate</div>
-                                        <div class="flow-box" id="generate-box">FLAN-T5 LLM</div>
-                                    </div>
-                                </div>
-                                <div class="output-console font-mono">
-                                    <div class="console-hdr">ArgRAG_OUTPUT_STREAM</div>
-                                    <div class="console-body" id="rag-console-output">
-                                        // Click "Run RAG Pipeline" to execute the pipeline flow...
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="exp-company-logo">W</div>
                         </div>
 
-                        <!-- Play 2: EHR Fusion -->
-                        <div class="playground-content" id="pg-ehr">
-                            <div class="pg-info">
-                                <h3>Multimodal Clinical Outcome Prediction (MIMIC-IV)</h3>
-                                <p>Integrates structured EHR patient statistics and BioClinicalBERT clinical note embeddings. Adjust the sliders and input patient keywords to observe the fusion model risk calculation.</p>
-                            </div>
-                            <div class="pg-columns-grid">
-                                <div class="ehr-inputs glass-card">
-                                    <div class="slider-group">
-                                        <label for="ehr-age">Patient Age: <span id="val-age" class="font-mono text-glow">55</span> yrs</label>
-                                        <input type="range" id="ehr-age" min="18" max="100" value="55" class="custom-slider">
-                                    </div>
-                                    <div class="slider-group">
-                                        <label for="ehr-sbp">Systolic BP: <span id="val-sbp" class="font-mono text-glow">120</span> mmHg</label>
-                                        <input type="range" id="ehr-sbp" min="80" max="220" value="120" class="custom-slider">
-                                    </div>
-                                    <div class="slider-group">
-                                        <label for="ehr-creatinine">Serum Creatinine: <span id="val-creatinine" class="font-mono text-glow">1.0</span> mg/dL</label>
-                                        <input type="range" id="ehr-creatinine" min="0.5" max="6.0" step="0.1" value="1.0" class="custom-slider">
-                                    </div>
-                                    <div class="input-group">
-                                        <label for="ehr-notes">Clinical Admission Notes:</label>
-                                        <textarea id="ehr-notes" rows="3" class="form-input font-mono" placeholder="Type notes here (e.g., patient complains of acute kidney pain, shortness of breath...)"></textarea>
-                                    </div>
-                                </div>
-                                <div class="ehr-prediction glass-card">
-                                    <div class="gauge-wrapper">
-                                        <svg viewBox="0 0 100 100" class="risk-gauge">
-                                            <circle cx="50" cy="50" r="40" class="gauge-bg"></circle>
-                                            <circle cx="50" cy="50" r="40" class="gauge-fill" id="risk-gauge-fill"></circle>
-                                        </svg>
-                                        <div class="gauge-value font-mono">
-                                            <span id="risk-score-text" class="text-glow">15%</span>
-                                            <span class="risk-lbl">Mortality Risk</span>
-                                        </div>
-                                    </div>
-                                    <div class="prediction-alert" id="ehr-risk-alert">
-                                        <span class="alert-indicator bg-green"></span>
-                                        <span class="alert-status font-mono">STATUS: CLINI_STABLE</span>
-                                    </div>
-                                    <div class="model-log font-mono">
-                                        <div class="log-title">// BioClinicalBERT Embedding</div>
-                                        <div id="ehr-text-tokens" class="log-tokens">Embedding: [0.012, -0.452, 0.912, 0.088, ...]</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="exp-tech-row">
+                            <span class="exp-tech-tag">Python</span>
+                            <span class="exp-tech-tag">Pytest</span>
+                            <span class="exp-tech-tag">MLOps</span>
+                            <span class="exp-tech-tag">Docker</span>
+                            <span class="exp-tech-tag">CI/CD</span>
                         </div>
 
-                        <!-- Play 3: Grad-CAM X-Ray Scanner -->
-                        <div class="playground-content" id="pg-gradcam">
-                            <div class="pg-info">
-                                <h3>Anomaly Detection &amp; Grad-CAM Interpretability</h3>
-                                <p>Visualizing deep neural network decision features. Toggle the conditions and slide the opacity selector to see how Grad-CAM localizes pulmonary pathological features on the radiograph.</p>
-                                <div class="control-row">
-                                    <div class="btn-group-toggle">
-                                        <button class="toggle-btn active" id="btn-pneumonia">Pneumonia Focus</button>
-                                        <button class="toggle-btn" id="btn-tb">Tuberculosis Focus</button>
-                                    </div>
-                                    <div class="slider-group horiz">
-                                        <label for="gradcam-opacity">Grad-CAM Opacity:</label>
-                                        <input type="range" id="gradcam-opacity" min="0" max="100" value="70" class="custom-slider">
-                                    </div>
-                                </div>
+                        <p class="exp-date-range">Aug 2026 &ndash; Present &bull; Remote (US Branch: Lewes, DE)</p>
+
+                        <ul class="exp-bullets-list custom-scrollbar">
+                            <li>Implemented testing protocols and automated validation benchmarks for ML pipelines, ensuring strict adherence to company engineering and reliability standards.</li>
+                            <li>Collaborated with cross-functional engineering teams to support core development initiatives, pipeline optimizations, and machine learning infrastructure.</li>
+                            <li>Assisted in developing, testing, and deploying machine learning workflows and automated quality assurance subroutines across cloud environments.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Card 2: Quantela MLE -->
+                    <article class="experience-card">
+                        <div class="exp-card-header">
+                            <div>
+                                <h4 class="exp-role-title">Machine Learning Engineer</h4>
+                                <p class="exp-company-name">Quantela</p>
                             </div>
-                            <div class="pg-columns-grid">
-                                <div class="xray-viewport">
-                                    <div class="scanline"></div>
-                                    <svg viewBox="0 0 200 200" class="xray-base">
-                                        <!-- Stylized vector Ribcage and Lungs -->
-                                        <rect width="200" height="200" fill="#02050e"></rect>
-                                        <!-- Spine -->
-                                        <line x1="100" y1="20" x2="100" y2="180" stroke="#1e293b" stroke-width="12"></line>
-                                        <!-- Lungs Left and Right -->
-                                        <path d="M90,30 C60,25 35,45 35,100 C35,160 65,170 85,170 C90,170 90,160 90,150 Z" fill="#0f172a" stroke="#334155" stroke-width="2"></path>
-                                        <path d="M110,30 C140,25 165,45 165,100 C165,160 135,170 115,170 C110,170 110,160 110,150 Z" fill="#0f172a" stroke="#334155" stroke-width="2"></path>
-                                        <!-- Ribs left -->
-                                        <path d="M40,60 Q70,75 90,65" fill="none" stroke="#1e293b" stroke-width="4"></path>
-                                        <path d="M38,90 Q70,105 90,95" fill="none" stroke="#1e293b" stroke-width="4"></path>
-                                        <path d="M38,120 Q70,135 90,125" fill="none" stroke="#1e293b" stroke-width="4"></path>
-                                        <!-- Ribs right -->
-                                        <path d="M160,60 Q130,75 110,65" fill="none" stroke="#1e293b" stroke-width="4"></path>
-                                        <path d="M162,90 Q130,105 110,95" fill="none" stroke="#1e293b" stroke-width="4"></path>
-                                        <path d="M162,120 Q130,135 110,125" fill="none" stroke="#1e293b" stroke-width="4"></path>
-                                    </svg>
-                                    <div class="gradcam-overlay" id="gradcam-overlay-layer"></div>
-                                </div>
-                                <div class="xray-metrics glass-card font-mono">
-                                    <h4>Neural Activation Map</h4>
-                                    <div class="metric-row">
-                                        <span>Target Class:</span>
-                                        <span id="xray-target-class" class="text-glow">Pneumonia</span>
-                                    </div>
-                                    <div class="metric-row">
-                                        <span>Model Confidence:</span>
-                                        <span id="xray-confidence" class="text-glow-rose">94.2%</span>
-                                    </div>
-                                    <div class="metric-row">
-                                        <span>Grad-CAM Extrapolator:</span>
-                                        <span class="c-green">CONVERGING</span>
-                                    </div>
-                                    <div class="xray-findings">
-                                        <strong>Findings Summary:</strong>
-                                        <p id="xray-findings-desc">Model localizes high activation intensities in the bilateral lower lung zones, consistent with bronchopneumonic infiltrates.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="exp-company-logo">Q</div>
                         </div>
 
-                        <!-- Play 4: Route Optimizer -->
-                        <div class="playground-content" id="pg-route">
-                            <div class="pg-info">
-                                <h3>Graph Route Optimizer with Real-Time Constraints</h3>
-                                <p>Calculates optimal delivery routes using graph search algorithms. Click on the grid map to place custom delivery addresses/nodes, select your solver, and trigger the search path optimization.</p>
-                                <div class="control-row">
-                                    <div class="btn-group-toggle">
-                                        <button class="toggle-btn active" id="btn-dijkstra">Dijkstra</button>
-                                        <button class="toggle-btn" id="btn-astar">A* Algorithm</button>
-                                    </div>
-                                    <div class="btn-group-normal">
-                                        <button id="btn-solve-route" class="btn-primary">Solve Path</button>
-                                        <button id="btn-clear-route" class="btn-secondary">Reset Grid</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pg-columns-grid">
-                                <div class="canvas-container">
-                                    <canvas id="route-canvas"></canvas>
-                                    <div class="canvas-instruction font-mono">Click grid to add path nodes</div>
-                                </div>
-                                <div class="route-metrics glass-card font-mono">
-                                    <h4>Path Metrics</h4>
-                                    <div class="metric-row">
-                                        <span>Nodes Traversed:</span>
-                                        <span id="path-nodes-count" class="text-glow">0</span>
-                                    </div>
-                                    <div class="metric-row">
-                                        <span>Total Distance:</span>
-                                        <span id="path-total-distance" class="text-glow-cyan">0 px</span>
-                                    </div>
-                                    <div class="metric-row">
-                                        <span>Search Frontier:</span>
-                                        <span id="path-time-elapsed">Idle</span>
-                                    </div>
-                                    <div class="path-logs">
-                                        <strong>Graph Explorer Trace:</strong>
-                                        <ul id="path-logs-list" class="console-logs font-mono">
-                                            <li>Waiting for node placement...</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="exp-tech-row">
+                            <span class="exp-tech-tag">AWS / GCP</span>
+                            <span class="exp-tech-tag">PyTorch</span>
+                            <span class="exp-tech-tag">LLMs</span>
+                            <span class="exp-tech-tag">SHAP</span>
+                            <span class="exp-tech-tag">MLOps</span>
                         </div>
-                        <!-- Play 5: Agentic Code Sandbox -->
-                        <div class="playground-content" id="pg-agentic">
-                            <div class="pg-info">
-                                <h3>Pathway of the Silicon Mind: Self-Correcting Agent Sandbox</h3>
-                                <p>Simulates an autonomous SWE agent loop executing inside a Docker container. Select a bug type, trigger the execution, and watch the agent capture the exception, prompt a repair model, patch the code, and verify it successfully.</p>
-                                <div class="query-selector">
-                                    <label for="agentic-bug-type">Select a deliberate bug injection:</label>
-                                    <div class="input-btn-group">
-                                        <select id="agentic-bug-type" class="form-input font-mono">
-                                            <option value="zero_div">ZeroDivisionError (denominator = 0)</option>
-                                            <option value="index_err">IndexError (list index out of range)</option>
-                                            <option value="type_err">TypeError (unsupported operand types)</option>
-                                        </select>
-                                        <button id="run-agentic-loop-btn" class="btn-primary">Trigger Agentic Loop</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pg-columns-grid">
-                                <div class="xray-metrics glass-card font-mono" style="padding: 1.5rem; display: flex; flex-direction: column; min-height: 250px;">
-                                    <h4 style="margin-top: 0; border-bottom: 1px solid rgba(241, 245, 249, 0.08); padding-bottom: 0.5rem; color: var(--text-color);">// SOURCE_CODE_EDITOR</h4>
-                                    <pre id="sandbox-editor-content" style="flex-grow: 1; font-family: monospace; font-size: 11px; line-height: 1.5; color: var(--text-color); overflow-y: auto; white-space: pre-wrap; margin: 0; background: rgba(3, 7, 18, 0.5); padding: 1rem; border-radius: 4px; border: 1px solid rgba(241, 245, 249, 0.05); text-align: left;">def run_calculation():
-    numerator = 100
-    denominator = 0  # BUG: Division by zero
-    result = numerator / denominator
-    return result
 
-if __name__ == '__main__':
-    run_calculation()</pre>
-                                </div>
-                                <div class="xray-metrics glass-card font-mono" style="padding: 1.5rem; display: flex; flex-direction: column; min-height: 250px;">
-                                    <h4 style="margin-top: 0; border-bottom: 1px solid rgba(241, 245, 249, 0.08); padding-bottom: 0.5rem; color: var(--text-color);">// DOCKER_SANDBOX_OUTPUT</h4>
-                                    <pre id="sandbox-console-output" style="flex-grow: 1; font-family: monospace; font-size: 11px; line-height: 1.5; color: var(--neon-cyan); overflow-y: auto; white-space: pre-wrap; margin: 0; background: #030712; padding: 1rem; border-radius: 4px; border: 1px solid rgba(241, 245, 249, 0.05); min-height: 180px; text-align: left;">Waiting for agentic loop initiation...</pre>
-                                </div>
+                        <p class="exp-date-range">Apr 2022 &ndash; May 2024 &bull; Hyderabad, TG</p>
+
+                        <ul class="exp-bullets-list custom-scrollbar">
+                            <li>Architected end-to-end MLOps pipelines (ingestion &rarr; training &rarr; deployment &rarr; monitoring) on AWS/GCP, reducing model deployment time from 6 weeks to under 48 hours and cutting batch training cost by ~45%.</li>
+                            <li>Pioneered an LLM-powered citizen-service automation workflow integrated into the eGovernance stack, resolving 89% of 40K+ monthly queries without human intervention in under 30 seconds.</li>
+                            <li>Established model governance (drift detection, SHAP explainability, A/B testing) aligned to CMMI Level 5, passing external AI audits with zero critical findings.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Card 3: Quantela Intern -->
+                    <article class="experience-card">
+                        <div class="exp-card-header">
+                            <div>
+                                <h4 class="exp-role-title">Machine Learning Intern</h4>
+                                <p class="exp-company-name">Quantela</p>
                             </div>
+                            <div class="exp-company-logo">Q</div>
                         </div>
-                    </div>
+
+                        <div class="exp-tech-row">
+                            <span class="exp-tech-tag">Computer Vision</span>
+                            <span class="exp-tech-tag">TensorFlow</span>
+                            <span class="exp-tech-tag">OpenCV</span>
+                            <span class="exp-tech-tag">IoT Telemetry</span>
+                        </div>
+
+                        <p class="exp-date-range">2021 &ndash; Apr 2022 &bull; Hyderabad, TG</p>
+
+                        <ul class="exp-bullets-list custom-scrollbar">
+                            <li>Productionized computer vision and anomaly-detection models for video monitoring, crowd management, and IoT telemetry across 35,000+ smart-streetlight and parking assets, achieving 94% mAP and a 62% drop in false alerts.</li>
+                            <li>Built a reusable AI model store and feature-engineering framework that eliminated ~70% of duplicate modeling effort across Asset Management, Location Insights, and Citizen App lines.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Card 4: Academic & Agentic Research -->
+                    <article class="experience-card">
+                        <div class="exp-card-header">
+                            <div>
+                                <h4 class="exp-role-title">Graduate AI & ML Researcher</h4>
+                                <p class="exp-company-name">Saint Peter's University</p>
+                            </div>
+                            <div class="exp-company-logo">SPU</div>
+                        </div>
+
+                        <div class="exp-tech-row">
+                            <span class="exp-tech-tag">LangGraph</span>
+                            <span class="exp-tech-tag">crewAI</span>
+                            <span class="exp-tech-tag">vLLM AWQ</span>
+                            <span class="exp-tech-tag">Docker</span>
+                            <span class="exp-tech-tag">DeBERTa</span>
+                        </div>
+
+                        <p class="exp-date-range">2025 &ndash; 2026 &bull; Jersey City, NJ</p>
+
+                        <ul class="exp-bullets-list custom-scrollbar">
+                            <li>Designed ArgRAG, an argumentation-aware RAG pipeline improving factual accuracy by 3.4% and explanation quality by 21% (human-rated) on the BEIR-FEVER benchmark.</li>
+                            <li>Engineered an autonomous software engineering loop in Python with pytest test executions in isolated Docker containers, capturing stack traces and auto-patching buggy scripts.</li>
+                            <li>Hosted Mistral-7B at 4-bit AWQ quantization on vLLM serving engine, measuring TTFT latency and throughput metrics.</li>
+                        </ul>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <!-- Experience Timeline Section -->
-        <section id="experience" class="experience-section">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-tag">// MILESTONES</span>
-                    <h2 class="section-title">Professional Timeline</h2>
-                </div>
+        <!-- ==================== 4. SKILLS SECTION ==================== -->
+        <section id="skills" class="snap-section">
+            <h3 class="section-title-top">Skills</h3>
+            <h3 class="section-subtitle-top">Hover over a skill for current proficiency</h3>
 
-                <div class="timeline">
-                    <!-- Event 0 -->
-                    <div class="timeline-item" data-timeline="0">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-header font-mono">
-                            <span class="timeline-date">2026</span>
-                            <span class="timeline-company">Pathway of the Silicon Mind</span>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    
+                    <!-- Python -->
+                    <div class="skill-item-group" title="Python">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2C6.48 2 6.8 4.4 6.8 4.4l.01 2.5h5.3v.75H4.2S2 7.37 2 12.89c0 5.51 1.93 5.34 1.93 5.34h1.15v-2.67s-.06-3.18 3.12-3.18h5.36s3.06.05 3.06-2.97V4.4S17.06 2 12 2zm-2.12 1.63c.52 0 .94.42.94.94s-.42.94-.94.94-.94-.42-.94-.94.42-.94.94-.94z" fill="#3776AB"/>
+                                <path d="M12 22c5.52 0 5.2-2.4 5.2-2.4l-.01-2.5h-5.3v-.75h7.91S22 16.63 22 11.11c0-5.51-1.93-5.34-1.93-5.34h-1.15v2.67s.06 3.18-3.12 3.18H10.44s-3.06-.05-3.06 2.97V19.6S6.94 22 12 22zm2.12-1.63c-.52 0-.94-.42-.94-.94s.42-.94.94-.94.94.42.94.94-.42.94-.94.94z" fill="#FFD43B"/>
+                            </svg>
                         </div>
-                        <div class="timeline-body hud-panel glass-card">
-                            <h3>Agentic AI & Serving Ascension</h3>
-                            <p class="role-desc">Completed Sequences 9 ➔ 0 (Divine Engine Ascended)</p>
-                            <ul class="timeline-bullets">
-                                <li><strong>Sequences 9–6 (Mortal & Awakening)</strong>: Built custom deep learning training loops, backprop from scratch, optimizer step updates, and causal transformer attention calculators.</li>
-                                <li><strong>Sequences 5–3 (Demi-God)</strong>: Implemented few-shot text-to-SQL generation, local vector indexing search (ChromaDB), parameter-efficient fine-tuning (PEFT/LoRA) configurations, and stateful LangGraph agent loops.</li>
-                                <li><strong>Sequences 2–0 (Divine)</strong>: Developed multi-agent role-playing crews (crewAI/AutoGen), quantized serving servers (vLLM AWQ) with TTFT latency streams, Docker sandbox isolation runners, and autonomous self-repair SWE loops.</li>
-                            </ul>
-                            <div class="tech-row">
-                                <span class="badge">LangGraph</span>
-                                <span class="badge">crewAI</span>
-                                <span class="badge">vLLM</span>
-                                <span class="badge">LoRA</span>
-                                <span class="badge">Docker</span>
-                                <span class="badge">PyTorch</span>
-                            </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">95%</p>
                         </div>
                     </div>
 
-                    <!-- Event 1 -->
-                    <div class="timeline-item" data-timeline="1">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-header font-mono">
-                            <span class="timeline-date">Apr 2022 - May 2024</span>
-                            <span class="timeline-company">Quantela</span>
+                    <!-- PyTorch -->
+                    <div class="skill-item-group" title="PyTorch">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#EE4C2C">
+                                <path d="M12.65 1.76a10 10 0 0 0-8.23 9.87c0 4.14 2.52 7.7 6.13 9.19l.71-1.84a8.04 8.04 0 0 1-4.88-7.35 8 8 0 0 1 6.58-7.89l-.31-1.98zM15 4a2 2 0 1 1-2 2 2 2 0 0 1 2-2zm-1.86 3.26l-1.39 1.4 3.53 3.53-1.42 1.42 3.54 3.53 1.41-1.41-3.53-3.54 1.41-1.41-3.55-3.52z"/>
+                            </svg>
                         </div>
-                        <div class="timeline-body hud-panel glass-card">
-                            <h3>Machine Learning Engineer</h3>
-                            <p class="role-desc">Outcomes Platform for Smart Cities & IoT</p>
-                            <ul class="timeline-bullets">
-                                <li>Architected end-to-end MLOps pipelines on AWS/GCP, reducing model deployment time from 6 weeks to under 48 hours and cutting batch training cost by ~45%.</li>
-                                <li>Pioneered an LLM-powered citizen-service automation workflow resolving 89% of 40K+ monthly queries in under 30 seconds.</li>
-                                <li>Established model governance (drift detection, SHAP explainability, A/B testing) aligned to CMMI Level 5.</li>
-                            </ul>
-                            <div class="tech-row">
-                                <span class="badge">AWS/GCP</span>
-                                <span class="badge">MLOps</span>
-                                <span class="badge">LLMs</span>
-                                <span class="badge">PyTorch</span>
-                            </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">90%</p>
                         </div>
                     </div>
 
-                    <!-- Event 2 -->
-                    <div class="timeline-item" data-timeline="2">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-header font-mono">
-                            <span class="timeline-date">2021 - Apr 2022</span>
-                            <span class="timeline-company">Quantela</span>
+                    <!-- TensorFlow -->
+                    <div class="skill-item-group" title="TensorFlow">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#FF6F00">
+                                <path d="M1.29 5.87l8.66-5 8.66 5v5.33l-4.33 2.5v-4.5l-4.33-2.5v12.43l-4.33-2.5V8.37l-4.33 2.5V5.87zm17.32 0v5.33l4.33-2.5V5.87l-4.33-2.5v2.5zm0 8.33l4.33-2.5v5.33l-4.33 2.5v-5.33z"/>
+                            </svg>
                         </div>
-                        <div class="timeline-body hud-panel glass-card">
-                            <h3>Machine Learning Intern</h3>
-                            <p class="role-desc">Computer Vision & Telemetry Pipelines</p>
-                            <ul class="timeline-bullets">
-                                <li>Productionized computer vision and anomaly-detection models across 35,000+ streetlights and parking assets, achieving 94% mAP.</li>
-                                <li>Built a reusable AI model store and feature-engineering framework that eliminated ~70% of duplicate modeling effort.</li>
-                            </ul>
-                            <div class="tech-row">
-                                <span class="badge">Computer Vision</span>
-                                <span class="badge">IoT</span>
-                                <span class="badge">TensorFlow</span>
-                                <span class="badge">Feature Engineering</span>
-                            </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">85%</p>
                         </div>
                     </div>
 
-                    <!-- Event 3 -->
-                    <div class="timeline-item" data-timeline="3">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-header font-mono">
-                            <span class="timeline-date">2025 - 2026</span>
-                            <span class="timeline-company">Saint Peter's University</span>
+                    <!-- LangGraph / Agentic AI -->
+                    <div class="skill-item-group" title="LangGraph / Agentic AI">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#2F5D50" stroke-width="2">
+                                <circle cx="12" cy="5" r="3"/>
+                                <circle cx="5" cy="19" r="3"/>
+                                <circle cx="19" cy="19" r="3"/>
+                                <line x1="12" y1="8" x2="5" y2="16"/>
+                                <line x1="12" y1="8" x2="19" y2="16"/>
+                                <line x1="5" y1="19" x2="19" y2="19" stroke-dasharray="2 2"/>
+                            </svg>
                         </div>
-                        <div class="timeline-body hud-panel glass-card">
-                            <h3>Graduate Research Project</h3>
-                            <p class="role-desc">Architecting Advanced NLP Retrieval Solutions</p>
-                            <ul class="timeline-bullets">
-                                <li>Designed and deployed <strong>ArgRAG</strong>, a modular RAG pipeline adding argument filters between BM25/DPR ensembled retrievers and generators.</li>
-                                <li>Optimized classification models (RoBERTa, DeBERTa) to filter passages by argument alignment, boosting factual accuracy by 3.4%.</li>
-                            </ul>
-                            <div class="tech-row">
-                                <span class="badge">PyTorch</span>
-                                <span class="badge">Transformers</span>
-                                <span class="badge">HuggingFace</span>
-                                <span class="badge">DeBERTa</span>
-                            </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">90%</p>
                         </div>
                     </div>
 
-                    <!-- Event 4 -->
-                    <div class="timeline-item" data-timeline="4">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-header font-mono">
-                            <span class="timeline-date">2025</span>
-                            <span class="timeline-company">Clinical EHR Project</span>
+                    <!-- vLLM / Model Serving -->
+                    <div class="skill-item-group" title="vLLM Serving">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#68B2A0" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                                <path d="m7 9 3 3-3 3"/>
+                                <line x1="13" y1="15" x2="17" y2="15"/>
+                            </svg>
                         </div>
-                        <div class="timeline-body hud-panel glass-card">
-                            <h3>Multimodal Deep Learning Architect</h3>
-                            <p class="role-desc">Deep Fusion for Clinical Predictions</p>
-                            <ul class="timeline-bullets">
-                                <li>Built deep fusion architectures combining structured tabular hospital statistics and BioClinicalBERT clinical note embeddings.</li>
-                                <li>Improved mortality and triage prediction F1 metric by 7% using PyTorch deep neural networks.</li>
-                            </ul>
-                            <div class="tech-row">
-                                <span class="badge">PyTorch</span>
-                                <span class="badge">SQLAlchemy</span>
-                                <span class="badge">MIMIC-IV</span>
-                                <span class="badge">BERT</span>
-                            </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">85%</p>
                         </div>
                     </div>
 
-                    <!-- Event 5 -->
-                    <div class="timeline-item" data-timeline="5">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-header font-mono">
-                            <span class="timeline-date">2024</span>
-                            <span class="timeline-company">NASA Dataset Research</span>
+                    <!-- Transformers / Hugging Face -->
+                    <div class="skill-item-group" title="Transformers / Hugging Face">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#FFD21E">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="9" cy="10" r="1.5" fill="#000"/>
+                                <circle cx="15" cy="10" r="1.5" fill="#000"/>
+                                <path d="M8 14c1 2 3 2.5 4 2.5s3-.5 4-2.5" stroke="#000" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                            </svg>
                         </div>
-                        <div class="timeline-body hud-panel glass-card">
-                            <h3>MLP Neural Net Architect</h3>
-                            <p class="role-desc">Asteroid Diameter Regression</p>
-                            <ul class="timeline-bullets">
-                                <li>Optimized a multi-layer perceptron neural network using TensorFlow/Keras on NASA's open datasets, estimating asteroid size with high $R^2$ scores.</li>
-                            </ul>
-                            <div class="tech-row">
-                                <span class="badge">TensorFlow</span>
-                                <span class="badge">Keras</span>
-                                <span class="badge">Scikit-learn</span>
-                                <span class="badge">Pandas</span>
-                            </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">90%</p>
                         </div>
                     </div>
+
+                    <!-- RAG & Vector DBs -->
+                    <div class="skill-item-group" title="RAG & Vector Search">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#2F5D50" stroke-width="2">
+                                <path d="M4 6h16M4 12h16M4 18h10"/>
+                                <circle cx="18" cy="18" r="3"/>
+                                <path d="m20.5 20.5 2 2"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">90%</p>
+                        </div>
+                    </div>
+
+                    <!-- Docker -->
+                    <div class="skill-item-group" title="Docker">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#2496ED">
+                                <path d="M13.98 11.08h-2.12v-2.1h2.12v2.1zm-2.6 0H9.27v-2.1h2.11v2.1zm-2.6 0H6.66v-2.1h2.12v2.1zm5.2 0h2.12v-2.1h-2.12v2.1zm2.6 0h2.12v-2.1h-2.12v2.1zm-7.8-2.6H6.66v-2.1h2.12v2.1zm2.6 0H9.27v-2.1h2.11v2.1zm2.6 0h-2.12v-2.1h2.12v2.1zm6.97 3.52c-.3-.21-.99-.34-1.63-.16-.27-.72-.81-1.3-1.46-1.57l-.37-.16-.26.31c-.34.41-.53.94-.53 1.51 0 .28.05.56.14.82-.44.13-1.02.17-1.74.17H1.38c-.37 1.55.08 3.2 1.13 4.29 1.48 1.53 3.96 2.07 7.78 2.07 6.46 0 10.9-3.23 11.83-8.08.73.08 1.47-.14 1.88-.69l-1.02-.51z"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">85%</p>
+                        </div>
+                    </div>
+
+                    <!-- AWS -->
+                    <div class="skill-item-group" title="AWS">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#FF9900">
+                                <path d="M12.8 14.5c-2.3 1.2-5.1 1.9-8 1.9-3.9 0-7.3-1.4-9.8-3.7-.2-.2 0-.5.2-.4 3.7 2.1 8.2 3.3 12.8 3.3 2.6 0 5.4-.5 7.9-1.5.4-.2.7.2.4.5l-3.5-.1z"/>
+                                <path d="M21.5 13.1c-.3-.4-1.9-.2-2.6-.1-.2 0-.3-.2-.1-.3 1.2-.9 3.2-.6 3.5-.3.3.4-.1 2.4-1.3 3.4-.2.1-.3 0-.3-.2.2-.7.8-2.1.8-2.5z"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">80%</p>
+                        </div>
+                    </div>
+
+                    <!-- Google Cloud Platform -->
+                    <div class="skill-item-group" title="GCP">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#4285F4">
+                                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">75%</p>
+                        </div>
+                    </div>
+
+                    <!-- OpenCV / Computer Vision -->
+                    <div class="skill-item-group" title="OpenCV">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#5C3EE8" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/>
+                                <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/>
+                                <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/>
+                                <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">85%</p>
+                        </div>
+                    </div>
+
+                    <!-- SQL -->
+                    <div class="skill-item-group" title="SQL & Databases">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#336791">
+                                <path d="M12 2C6.48 2 2 4.02 2 6.5v11C2 19.98 6.48 22 12 22s10-2.02 10-4.5v-11C22 4.02 17.52 2 12 2zm0 2c4.42 0 8 1.45 8 2.5S16.42 9 12 9 4 7.55 4 6.5 7.58 4 12 4zm8 13.5c0 1.05-3.58 2.5-8 2.5s-8-1.45-8-2.5V14.3c1.94 1.25 4.86 1.7 8 1.7s6.06-.45 8-1.7v3.2zm0-5c0 1.05-3.58 2.5-8 2.5s-8-1.45-8-2.5V9.3c1.94 1.25 4.86 1.7 8 1.7s6.06-.45 8-1.7v3.2z"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">85%</p>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="skill-item-group" title="Git & GitHub">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#F05032">
+                                <path d="M21.62 10.45l-8.07-8.07a2.53 2.53 0 0 0-3.57 0l-1.8 1.8 2.27 2.27a2.12 2.12 0 0 1 2.68 2.68l2.19 2.19a2.1 2.1 0 1 1-1.39 1.39l-2.05-2.05v4.29a2.12 2.12 0 1 1-1.95 0v-4.38L7.6 12.89a2.12 2.12 0 1 1-1.4-1.39l2.25-2.25L2.38 3.18a2.53 2.53 0 0 0 0 3.57l8.07 8.07a2.53 2.53 0 0 0 3.57 0l7.6-7.6a2.53 2.53 0 0 0 0-3.57z"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">90%</p>
+                        </div>
+                    </div>
+
+                    <!-- Scikit-Learn -->
+                    <div class="skill-item-group" title="Scikit-learn">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#F7931E">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">90%</p>
+                        </div>
+                    </div>
+
+                    <!-- Linux & Bash -->
+                    <div class="skill-item-group" title="Linux & Bash">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="#000000">
+                                <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 .7.2 1.4.5 2C7.3 9.4 6 11.5 6 14c0 3.5 2.5 6 6 6s6-2.5 6-6c0-2.5-1.3-4.6-2-5.5.3-.6.5-1.3.5-2C16.5 4 14.5 2 12 2zm-2 5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">85%</p>
+                        </div>
+                    </div>
+
+                    <!-- Pytest & Testing -->
+                    <div class="skill-item-group" title="Pytest & Testing">
+                        <div class="skill-icon-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#009688" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <div class="skill-overlay-percent">
+                            <p class="skill-percent-text">85%</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Command Console Terminal Section -->
-        <section id="terminal" class="terminal-section">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-tag">// CYBER SYSTEM SHELL</span>
-                    <h2 class="section-title">ML Terminal Interface</h2>
-                    <p class="section-desc">Run commands directly against my digital twin. Query skills, fetch resume details, or trigger model training simulations.</p>
-                </div>
+        <!-- ==================== 5. PROJECTS SECTION ==================== -->
+        <section id="projects" class="snap-section">
+            <h3 class="section-title-top">Projects</h3>
 
-                <div class="terminal-container hud-panel glass-card">
-                    <div class="terminal-header">
-                        <div class="header-elements">
-                            <span class="dot-red"></span>
-                            <span class="dot-yellow"></span>
-                            <span class="dot-green"></span>
-                            <span class="terminal-title font-mono">sta@neuroshell:~</span>
+            <!-- Skewed Diagonal Background Stripe -->
+            <div class="projects-skewed-banner"></div>
+
+            <div class="projects-container">
+                <div class="projects-slider custom-scrollbar">
+                    
+                    <!-- Slide 1: ArgRAG -->
+                    <div class="project-slide">
+                        <div class="project-mockup-frame">
+                            <svg class="project-mockup-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
                         </div>
-                        <div class="system-status font-mono">
-                            CORE: ACTIVE // LATENCY: 24ms
+                        <div class="project-info-box">
+                            <h4 class="project-title">
+                                Project 1 of 6: <span class="underline-accent">ArgRAG: Argument-Aware RAG</span>
+                            </h4>
+                            <div class="project-tech-icons">
+                                <span class="project-tech-badge">Python</span>
+                                <span class="project-tech-badge">PyTorch</span>
+                                <span class="project-tech-badge">DeBERTa</span>
+                                <span class="project-tech-badge">FLAN-T5</span>
+                                <span class="project-tech-badge">BEIR Benchmark</span>
+                            </div>
+                            <p class="project-summary-text">
+                                Designed a modular retrieval-augmented generation pipeline that introduces an argument filtering and reasoning layer between retriever ensembles (BM25, DPR, ColBERT, SPLADE) and LLM generators. Improved factual accuracy by 3.4% and explanation quality by 21% (human-rated), achieving +4.4% Verdict EM over the best single retriever on the BEIR-FEVER benchmark.
+                            </p>
+                            <div class="project-action-links">
+                                <a href="https://github.com/GehrmanSparrow-dev" target="_blank" class="project-link-btn">
+                                    <span>GitHub Repo</span> &rarr;
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="terminal-body font-mono" id="terminal-screen">
-                        <div class="term-line">SURYA TEJA ANUPINDI - COGNITIVE SHELL v1.0.0</div>
-                        <div class="term-line">Type <span class="c-cyan">help</span> to list active terminal utilities.</div>
-                        <div class="term-line">&nbsp;</div>
+
+                    <!-- Slide 2: Autonomous SWE & Serving -->
+                    <div class="project-slide">
+                        <div class="project-mockup-frame">
+                            <svg class="project-mockup-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m10 10-2 2 2 2m4-4 2 2-2 2"/>
+                            </svg>
+                        </div>
+                        <div class="project-info-box">
+                            <h4 class="project-title">
+                                Project 2 of 6: <span class="underline-accent">Autonomous SWE &amp; Agentic Serving Platform</span>
+                            </h4>
+                            <div class="project-tech-icons">
+                                <span class="project-tech-badge">LangGraph</span>
+                                <span class="project-tech-badge">crewAI</span>
+                                <span class="project-tech-badge">vLLM AWQ</span>
+                                <span class="project-tech-badge">Docker</span>
+                                <span class="project-tech-badge">Pytest</span>
+                            </div>
+                            <p class="project-summary-text">
+                                Engineered a self-correcting autonomous software development loop in Python that executes test suites inside isolated Docker sandbox containers, captures tracebacks, and iteratively prompts a repair agent to fix errors automatically. Built high-performance model serving with vLLM hosting Mistral-7B at 4-bit AWQ precision with a streaming telemetry client measuring TTFT latency.
+                            </p>
+                            <div class="project-action-links">
+                                <a href="https://github.com/GehrmanSparrow-dev" target="_blank" class="project-link-btn">
+                                    <span>GitHub Repo</span> &rarr;
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="terminal-input-wrapper font-mono">
-                        <span class="prompt">sta@neuroshell:~$</span>
-                        <input type="text" id="terminal-input" autocomplete="off" placeholder="Type a command...">
+
+                    <!-- Slide 3: MIMIC-IV Clinical Outcome -->
+                    <div class="project-slide">
+                        <div class="project-mockup-frame">
+                            <svg class="project-mockup-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <div class="project-info-box">
+                            <h4 class="project-title">
+                                Project 3 of 6: <span class="underline-accent">Multimodal Clinical Outcome Prediction</span>
+                            </h4>
+                            <div class="project-tech-icons">
+                                <span class="project-tech-badge">BioClinicalBERT</span>
+                                <span class="project-tech-badge">PyTorch</span>
+                                <span class="project-tech-badge">SQLAlchemy</span>
+                                <span class="project-tech-badge">MIMIC-IV</span>
+                            </div>
+                            <p class="project-summary-text">
+                                Constructed deep multimodal fusion architectures fusing high-dimensional structured electronic health records (demographics, vital signs, lab statistics) with unstructured physician clinical admission notes. Encoded unstructured notes via BioClinicalBERT contextual embeddings, delivering a +7% F1-score improvement over unimodal baselines for ICU patient mortality prediction.
+                            </p>
+                            <div class="project-action-links">
+                                <a href="https://github.com/GehrmanSparrow-dev" target="_blank" class="project-link-btn">
+                                    <span>GitHub Repo</span> &rarr;
+                                </a>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Slide 4: Chest X-Ray Anomaly Detection -->
+                    <div class="project-slide">
+                        <div class="project-mockup-frame">
+                            <svg class="project-mockup-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                        </div>
+                        <div class="project-info-box">
+                            <h4 class="project-title">
+                                Project 4 of 6: <span class="underline-accent">Anomaly Detection in Chest Radiographs</span>
+                            </h4>
+                            <div class="project-tech-icons">
+                                <span class="project-tech-badge">TensorFlow</span>
+                                <span class="project-tech-badge">ResNet50</span>
+                                <span class="project-tech-badge">DenseNet121</span>
+                                <span class="project-tech-badge">Grad-CAM</span>
+                                <span class="project-tech-badge">OpenCV</span>
+                            </div>
+                            <p class="project-summary-text">
+                                Productionized deep convolutional neural network pipelines for detecting pneumonia and pulmonary tuberculosis from chest radiographs. Integrated Gradient-weighted Class Activation Mapping (Grad-CAM) to provide radiologists with transparent visual heatmaps pinpointing localized pathological lesions and model inference justifications.
+                            </p>
+                            <div class="project-action-links">
+                                <a href="https://github.com/GehrmanSparrow-dev" target="_blank" class="project-link-btn">
+                                    <span>GitHub Repo</span> &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Delivery Route Optimizer -->
+                    <div class="project-slide">
+                        <div class="project-mockup-frame">
+                            <svg class="project-mockup-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="6" cy="6" r="3"/>
+                                <circle cx="18" cy="18" r="3"/>
+                                <line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/>
+                            </svg>
+                        </div>
+                        <div class="project-info-box">
+                            <h4 class="project-title">
+                                Project 5 of 6: <span class="underline-accent">Delivery Route Optimizer with Real-Time Constraints</span>
+                            </h4>
+                            <div class="project-tech-icons">
+                                <span class="project-tech-badge">Python</span>
+                                <span class="project-tech-badge">NetworkX</span>
+                                <span class="project-tech-badge">Dijkstra &amp; A*</span>
+                                <span class="project-tech-badge">Christofides TSP</span>
+                            </div>
+                            <p class="project-summary-text">
+                                Developed a graph-theoretical logistics route simulator incorporating dynamic edge weights representing traffic congestion, speed limits, and delivery time windows. Benchmarked Dijkstra, A*, and Christofides heuristic algorithms to achieve sub-second query latency and reduce simulated fleet fuel routing costs by 15%.
+                            </p>
+                            <div class="project-action-links">
+                                <a href="https://github.com/GehrmanSparrow-dev" target="_blank" class="project-link-btn">
+                                    <span>GitHub Repo</span> &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: Asteroid Diameter Prediction -->
+                    <div class="project-slide">
+                        <div class="project-mockup-frame">
+                            <svg class="project-mockup-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 2a10 10 0 0 0-7.07 17.07l1.41-1.41A8 8 0 1 1 20 12h2a10 10 0 0 0-10-10z"/>
+                            </svg>
+                        </div>
+                        <div class="project-info-box">
+                            <h4 class="project-title">
+                                Project 6 of 6: <span class="underline-accent">Asteroid Diameter Prediction via MLP Neural Network</span>
+                            </h4>
+                            <div class="project-tech-icons">
+                                <span class="project-tech-badge">Python</span>
+                                <span class="project-tech-badge">TensorFlow</span>
+                                <span class="project-tech-badge">Scikit-learn</span>
+                                <span class="project-tech-badge">NASA Dataset</span>
+                            </div>
+                            <p class="project-summary-text">
+                                Built and regularized a Multi-Layer Perceptron (MLP) deep regression model trained on NASA's physical and orbital asteroid databases to predict physical diameter. Handled severe multi-collinearity with feature selection, variance inflation factor (VIF) filtering, and dropout regularization, achieving minimal MAE and strong predictive $R^2$ scores.
+                            </p>
+                            <div class="project-action-links">
+                                <a href="https://github.com/GehrmanSparrow-dev" target="_blank" class="project-link-btn">
+                                    <span>GitHub Repo</span> &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container small-container">
-                <div class="section-header center">
-                    <span class="section-tag">// COMM-LINK</span>
-                    <h2 class="section-title">Initialize Connection</h2>
-                </div>
+        <!-- ==================== 6. CONTACT SECTION ==================== -->
+        <section id="contact" class="snap-section">
+            <h3 class="section-title-top">Contact</h3>
 
-                <div class="contact-card hud-panel glass-card">
-                    <form id="contact-form" class="cyber-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="form-name">Name</label>
-                                <input type="text" id="form-name" required class="form-input" placeholder="Elon Musk">
-                            </div>
-                            <div class="form-group">
-                                <label for="form-email">Email Address</label>
-                                <input type="email" id="form-email" required class="form-input" placeholder="elon@spacex.com">
-                            </div>
+            <div class="contact-container">
+                <div class="contact-card-box">
+                    <h4 class="contact-headline">
+                        I have got just what you need. <span class="underline-accent">Let's talk.</span>
+                    </h4>
+
+                    <!-- Contact Details with Pulsing Green Icons -->
+                    <div class="contact-info-list">
+                        <!-- Phone -->
+                        <div class="contact-info-row">
+                            <svg class="contact-pulse-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <span>+1 (551) 263-9722</span>
                         </div>
-                        <div class="form-group">
-                            <label for="form-subject">Subject</label>
-                            <input type="text" id="form-subject" required class="form-input" placeholder="Opportunities / Projects">
+
+                        <!-- Email -->
+                        <div class="contact-info-row">
+                            <svg class="contact-pulse-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span>reach2.anupindi@gmail.com</span>
                         </div>
-                        <div class="form-group">
-                            <label for="form-message">Transmission Content</label>
-                            <textarea id="form-message" rows="5" required class="form-input" placeholder="Write your message here..."></textarea>
+
+                        <!-- Location -->
+                        <div class="contact-info-row">
+                            <svg class="contact-pulse-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Jersey City, NJ, United States</span>
                         </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn-primary full-width">Transmit Message</button>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="portfolio-contact-form" class="contact-form-styled">
+                        <div class="contact-form-row">
+                            <input type="text" id="contact-name" placeholder="Name" required class="contactInput">
+                            <input type="email" id="contact-email" placeholder="Email" required class="contactInput">
+                        </div>
+                        <input type="text" id="contact-subject" placeholder="Subject" required class="contactInput">
+                        <textarea id="contact-message" placeholder="Message" required class="contactInput"></textarea>
+                        <button type="submit" class="contact-submit-btn">Submit</button>
+                        <div id="contact-feedback" class="form-feedback-message">
+                            ✓ Thank you! Your message has been sent.
                         </div>
                     </form>
-                    <div id="form-response-console" class="font-mono text-glow-emerald hide">
-                        &gt; [SUCCESS] Transmission successfully delivered to Surya's node. Thank you!
-                    </div>
+
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="hud-footer">
-        <div class="container footer-container font-mono">
-            <p class="copyright">© 2026 SURYA TEJA ANUPINDI. ALL PIPELINES OPERATIONAL.</p>
-            <div class="social-links">
-                <a href="mailto:reach2.anupindi@gmail.com" class="social-link" title="Email">Email</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">LinkedIn</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">GitHub</a>
+        <!-- ==================== FLOATING FOOTER ==================== -->
+        <footer class="floating-footer">
+            <div class="floating-footer-inner">
+                <a href="#hero" class="back-to-top-btn" aria-label="Back to Top">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/>
+                    </svg>
+                </a>
             </div>
-        </div>
-    </footer>
+        </footer>
+
+    </div>
 
     <!-- Scripts -->
     <script src="app.js"></script>
