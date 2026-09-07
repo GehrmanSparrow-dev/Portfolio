@@ -497,6 +497,7 @@ body {
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 20%;
   box-shadow: var(--shadow-card);
   border: 4px solid #ffffff;
   transition: all 0.3s ease;
